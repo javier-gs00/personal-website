@@ -23,30 +23,24 @@ html {
   width: 100%;
   height: 100%;
 }
-/* @media only screen and (max-width: 599px){
-  html {
-    width: auto;
-    height: auto;
-  }
-} */
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   background: #fafafa;
 }
-/* @media only screen and (max-width: 599px){
-  body {
-    width: auto;
-    height: auto;
-  }
-} */
-
 h1 {
-  font-family: 'Playfair Display', serif;  
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 300;
 }
 a, p, span {
   font-family: 'Muli', sans-serif;
+  font-size: 20px;
+}
+a {
+    text-decoration: none;
+    color: #2e2e2e;
 }
 .logo {
   font-family: 'Playfair Display', serif;

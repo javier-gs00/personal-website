@@ -33,6 +33,16 @@ export default {
 }
 @media only screen and (min-width: 600px) {
     .about-container {
+        margin: 250px 50px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .about-container {
+        margin: 250px 150px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .about-container {
         margin: 250px 150px;
     }
 }
@@ -51,21 +61,15 @@ export default {
     padding: 10px;
 }
 .about h1 {
-    font-size: 48px;
     font-weight: 300;
 }
 @media only screen and (max-width: 599px) {
     .about h1 {
-        font-size: 32px;
         font-weight: 300;
     }
 }
-.about p {
-    font-size: 20px;
-}
 .about a {
     cursor: pointer;
-    font-size: 20px;
     text-decoration: underline;
 }
 </style>

@@ -56,7 +56,7 @@ export default {
     }
 }
 .home-content span {
-    font-size: 32px;
+    font-size: 40px;
 }
 @media only screen and (max-width: 599px){
     .home-content span {

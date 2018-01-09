@@ -72,15 +72,6 @@ export default {
     align-items: center;
     justify-content: center;
 }
-@media only screen and (min-width: 600px) {
-    .contact-card {
-        margin: 300px 150px;
-        padding: 20px 15px;
-        max-width: 500px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    }
-}
 @media only screen and (max-width: 599px) {
     .contact-card {
         margin: 10px;
@@ -89,26 +80,47 @@ export default {
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
     }
 }
+@media only screen and (min-width: 600px) {
+    .contact-card {
+        margin: 250px 50px;
+        padding: 20px 15px;
+        max-width: 500px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    }
+}
+@media only screen and (min-width: 900px) {
+    .contact-card {
+        margin: 250px 150px;
+        padding: 20px 15px;
+        max-width: 500px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .contact-card {
+        margin: 300px 150px;
+        padding: 20px 15px;
+        max-width: 500px;
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    }
+}
 .contact-card h1 {
     margin: 0;
-    font-size: 40px;
 }
 @media only screen and (max-width: 599px) {
     .contact-card h1 {
         margin: 0;
-        font-size: 32px;
         font-weight: 300;
     }
-}
-.contact-card p {
-    font-size: 20px;
 }
 .social-media-contact {
     display: flex;
 }
 .social-media-contact span {
     margin: 10px 5px;
-    font-size: 20px;
 }
 .linkedin {
     color: #0084bf;

@@ -41,13 +41,25 @@ export default {
 </script>
 
 <style>
-.work-container {
-    margin: 150px 150px;
-}
 @media only screen and (max-width: 599px) {
     .work-container {
         margin: 10px 10px 65px 10px;
         overflow-y: hidden;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .work-container {
+        margin: 150px 50px;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .work-container {
+        margin: 250px 150px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .work-container {
+        margin: 150px 150px;
     }
 }
 .work-container .project {
@@ -66,26 +78,23 @@ export default {
 }
 .work-container h1 {
     margin: 20px 0;
-    font-size: 40px;
     font-weight: 300;
 }
 @media only screen and (max-width: 599px) {
     .work-container h1{
         margin: 0;
-        font-size: 32px;
         font-weight: 300;
     }
 }
 .work-container p {
     margin-bottom: 0;
-    font-size: 20px;
 }
 .work-container a {
-    font-size: 20px;
     text-decoration: underline;
 }
 .technologies {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin: 10px 0 5px 0;
 }
@@ -98,7 +107,6 @@ export default {
     }
 }
 .technologies span {
-    font-size: 24px;
     margin: 5px 10px;
 }
 span.react {
