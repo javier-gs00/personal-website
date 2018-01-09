@@ -1,29 +1,29 @@
 <template>
     <div class="nav-container">
         <!-- <span class="logo">Javier</span> -->
-        <ul>
-            <li>
+        <ul class="nav-bar">
+            <li class="nav-item">
                 <router-link to="/">
                     <font-awesome-icon :icon="faHome" />
-                    <span>HOME</span>
+                    <span class="nav-text">HOME</span>
                 </router-link>
             </li>
-            <li>
+            <li class="nav-item">
                 <router-link to="/about">
                     <font-awesome-icon :icon="faUser" />
-                    <span>ABOUT</span>
+                    <span class="nav-text">ABOUT</span>
                 </router-link>
             </li>
-            <li>
+            <li class="nav-item">
                 <router-link to="/work">
                     <font-awesome-icon :icon="faBriefcase" />
-                    <span>WORK</span>
+                    <span class="nav-text">WORK</span>
                 </router-link>
             </li>
-            <li>
+            <li class="nav-item">
                 <router-link to="/contact">
                     <font-awesome-icon :icon="faAt" />
-                    <span>CONTACT</span>
+                    <span class="nav-text">CONTACT</span>
                 </router-link>
             </li>
         </ul>
@@ -59,30 +59,62 @@ export default {
 </script>
 
 <style>
-.nav-container {
-    flex-basis: 320px;
-    min-width: 320px;
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    display: flex;
-    flex-direction: column;
-}
 .logo {
     font-size: 30px;
     margin-top: 20px;
     text-align: center;
 }
-ul {
+.nav-container {
+    flex-basis: 250px;
+    min-width: 250px;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+}
+@media only screen and (max-width: 599px){
+    .nav-container {
+        bottom: 0px;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 1px 6px 2px rgba(0, 0, 0, .3);
+    }
+}
+.nav-bar {
     margin: auto 0;
     padding: 0 50px;
     float: left;
     list-style-type: none;
 }
-li {
+@media only screen and (max-width: 599px){
+    .nav-bar {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+}
+.nav-item {
     margin: 20px 0;
 }
-li span {
+@media only screen and (max-width: 599px){
+    .nav-item {
+        flex-basis: 25%;
+        display: flex;
+        justify-content: center;
+    }
+}
+.nav-item span {
     margin-inline-start: 5px;
+}
+@media only screen and (max-width: 599px){
+    .nav-item span{
+        margin-inline-start: 0px;
+    }
+    .nav-text {
+        display: none;
+    }
 }
 a {
     text-decoration: none;

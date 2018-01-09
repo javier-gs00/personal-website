@@ -19,13 +19,22 @@ export default {
 </script>
 
 <style>
-.home-container {
-    margin-top: 0;
-    /* background: red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+@media only screen and (min-width: 600px) {
+    .home-container {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 599px){
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
 }
 .home-content {
     display: flex;
@@ -39,8 +48,20 @@ export default {
     font-weight: 300;
     margin: 0;
 }
+@media only screen and (max-width: 599px){
+    .home-content h1 {
+        font-size: 32px;
+        font-weight: 300px;
+        margin: 0;
+    }
+}
 .home-content span {
     font-size: 32px;
+}
+@media only screen and (max-width: 599px){
+    .home-content span {
+        font-size: 20px;
+    }
 }
 /* Vue transtion effects */
 .fade-enter-active, .fade-leave-active {

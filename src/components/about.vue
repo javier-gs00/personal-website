@@ -1,26 +1,71 @@
 <template>
     <div class="about-container">
-        <h1>A little bit about me...</h1>
-        <p>I am a web developer with a drive for creating applications that provide value to people.</p>
-        <p>To achieve this, a lot of my time is spent learning about new ways and technologies that would make the end user have a pleasant experience.</p>
+        <div class="about">
+            <h1>A little bit about me...</h1>
+            <p>I am a web developer with a drive for creating applications that provide value to people.</p>
+            <p>To achieve this, a lot of my time is spent learning about new methodologies and technologies that would provide the end user a pleasant experience.</p>
+            <p>Want to know the specifics? Check out my work history on 
+                <a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank">LinkedIn</a>
+                 <a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a>
+            </p>
+        </div>
     </div>
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 export default {
-    name: "about"
+    name: "about",
+
+    components: {
+        FontAwesomeIcon
+    }
 }
 </script>
 
 <style>
-.about-container {
-    margin: 250px 150px;
+@media only screen and (max-width: 599px) {
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
-.about-container h1 {
+@media only screen and (min-width: 600px) {
+    .about-container {
+        margin: 250px 150px;
+    }
+}
+@media only screen and (max-width: 599px) {
+    .about {
+        margin: 10px;
+        padding: auto 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.about {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    padding: 10px;
+}
+.about h1 {
     font-size: 48px;
     font-weight: 300;
 }
-.about-container p {
-    font-size: 24px;
+@media only screen and (max-width: 599px) {
+    .about h1 {
+        font-size: 32px;
+        font-weight: 300;
+    }
+}
+.about p {
+    font-size: 20px;
+}
+.about a {
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
 }
 </style>

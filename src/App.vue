@@ -23,12 +23,25 @@ html {
   width: 100%;
   height: 100%;
 }
+/* @media only screen and (max-width: 599px){
+  html {
+    width: auto;
+    height: auto;
+  }
+} */
 body {
   width: 100%;
   height: 100%;
   margin: 0;
   background: #fafafa;
 }
+/* @media only screen and (max-width: 599px){
+  body {
+    width: auto;
+    height: auto;
+  }
+} */
+
 h1 {
   font-family: 'Playfair Display', serif;  
 }
@@ -44,10 +57,5 @@ a, p, span {
 }
 .main-container {
   width: 100%;
-  /* flex-basis: 1; */
-  /* display: inline-block; */
-  /* margin: 0 0 0 250px; */
-  /* margin: 0;
-  padding: 0; */
 }
 </style>

@@ -3,7 +3,7 @@
         <div class="project">
             <h1>Project Pets</h1>
             <p>The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.</p>
-            <p>Did I peek your interest? You can check the progress of this project <a href="https://project-pets-client.herokuapp.com" target="blank">here</a>.</p>
+            <p>Did I peek your interest? You can check the progress of this project <a href="https://project-pets-client.herokuapp.com" target="blank">here</a> <a href="https://project-pets-client.herokuapp.com" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></p>
             <p>The main technologies used in this project are the following. </p>
             <div class="technologies">
                 <span class="react"><font-awesome-icon :icon="['fab', 'react']" size="2x"/></span>
@@ -16,7 +16,7 @@
         <div class="project">
             <h1>This website</h1>
             <p>This website was made using Vue.js.</p>
-            <p>You can learn more about this amazing javascript framework from the <a href="https://vuejs.org" target="blank">official website</a>.</p>
+            <p>You can learn more about this amazing javascript framework from the <a href="https://vuejs.org" target="blank">official website</a> <a href="https://vuejs.org" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></p>
             <p>The main technologies used in this project are the following. </p>
             <div class="technologies">
                 <span class="vue"><img src="../assets/logo.png"/></span>
@@ -44,29 +44,58 @@ export default {
 .work-container {
     margin: 150px 150px;
 }
+@media only screen and (max-width: 599px) {
+    .work-container {
+        margin: 10px 10px 65px 10px;
+        overflow-y: hidden;
+    }
+}
 .work-container .project {
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
     padding: 10px;
     margin: 20px 0;
 }
+@media only screen and (max-width: 599px) {
+    .work-container .project {
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+        padding: 10px;
+        margin: 0 0 10px 0;
+    }
+}
 .work-container h1 {
     margin: 20px 0;
     font-size: 40px;
     font-weight: 300;
+}
+@media only screen and (max-width: 599px) {
+    .work-container h1{
+        margin: 0;
+        font-size: 32px;
+        font-weight: 300;
+    }
 }
 .work-container p {
     margin-bottom: 0;
     font-size: 20px;
 }
 .work-container a {
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: underline;
 }
 .technologies {
     display: flex;
     align-items: center;
     margin: 10px 0 5px 0;
+}
+@media only screen and (max-width: 599px) {
+    .technologies {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px 0 5px 0;
+    }
 }
 .technologies span {
     font-size: 24px;
@@ -79,6 +108,11 @@ span.react {
 span.react-text {
     margin-inline-start: 2px;
     font-weight: 700;
+}
+@media only screen and (max-width: 599px) {
+    span.react-text  {
+        display: none;
+    }
 }
 .express {
     font: 25px "Helvetica Neue","Open Sans",sans-serif;
