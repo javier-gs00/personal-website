@@ -1,10 +1,10 @@
 <template>
     <div class="home-container">
         <div class="home-content">
+            <input ref="langChanger" type="button" :value="lang === 'english'? 'ENGLISH' : 'ESPAÑOL'" @click="changeLang"/>
             <h1>Javier Gutiérrez</h1>
             <div class="line"></div>
-            <span>{{ langEn ? en : es }}</span>
-            <!-- <button @click="changeLang" :value="langEn">Swap</button> -->
+            <span>{{ lang === 'english' ? 'Web Developer' : 'Desarrollador Web' }}</span>
         </div>
     </div>
 </template>
@@ -13,20 +13,8 @@
 export default {
     name: "home",
     props: {
-        lang: Boolean
-    },
-    data() {
-        return {
-            langEn: this.lang,
-            es: 'Desarrollador Web',
-            en: 'Web Developer'
-        }
-    },
-
-    methods: {
-        changeLang: function (e) {
-            return this.langEn = !this.langEn
-        }
+        lang: String,
+        changeLang: Function
     }
 }
 </script>
@@ -81,6 +69,44 @@ export default {
     margin: 5px 0;
     background: #000;
     width: 62%;
+}
+.home-content input {
+    top: 10px;
+    right: 10px;
+    position: fixed;
+    background: transparent;
+    color: #000;
+    border-width: 1px;
+    border-color: #000;
+    border-radius: 2px;
+    padding: 5px 15px;
+    font-size: 20px;
+    margin: 0px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+}
+.home-content input:active,
+.home-content input:hover {
+    color: #fff;
+    background: #000;
+}
+@media only screen and (max-width: 599px) {
+    .home-content input {
+        top: 10px;
+        right: 10px;
+        padding: 5px 15px;
+        font-size: 15px;
+        margin: 0px;
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+    }
+    .home-content input:active,
+    .home-content input:hover {
+        color: #000;
+        background: transparent;
+    }
 }
 /* Vue transtion effects */
 .fade-enter-active, .fade-leave-active {

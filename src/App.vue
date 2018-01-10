@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Navigation :lang='langEn'/>
+    <Navigation :lang="lang"/>
     <div class="main-container">
-      <router-view :lang="langEn"/>
+      <router-view :lang="lang" :changeLang="changeLang"/>
     </div>
   </div>
 </template>
@@ -14,10 +14,18 @@ export default {
   name: 'app',
   data() {
     return {
-      langEn: true
+      lang: 'english'
     }
   },
-
+  methods: {
+    changeLang() {
+      if(this.lang === 'english') {
+        return this.lang = 'spanish'
+      } else {
+        return this.lang = 'english'
+      }
+    }
+  },
   components: {
     Navigation
   }
@@ -40,7 +48,7 @@ h1 {
   font-size: 32px;
   font-weight: 300;
 }
-a, p, span {
+a, p, span, input {
   font-family: 'Muli', sans-serif;
   font-size: 20px;
 }

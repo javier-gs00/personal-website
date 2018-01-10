@@ -5,14 +5,8 @@
             <li v-for="navItem in navItems" :key="navItem.id" class="nav-item">
                 <router-link :to="navItem.to">
                     <font-awesome-icon :icon="['fas', navItem.icon]" />
-                    <span class="nav-text">{{ langEn ? navItem.nameEN : navItem.nameES }}</span>
+                    <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
                 </router-link> 
-            </li>
-            <li class="nav-item">
-                <button class="lang-swap" @click="changeLang">
-                    <font-awesome-icon :icon="['fas', 'globe']" />
-                    <span class="nav-text">{{ 'EN / ES' }}</span>
-                </button>
             </li>
         </ul>
     </div>
@@ -25,11 +19,10 @@ import solids from '@fortawesome/fontawesome-free-solid'
 export default {
     name: "navigation",
     props: {
-        lang: Boolean
+        lang: String
     },
     data() {
         return {
-            langEn: this.lang,
             navItems: [
                 {
                     id: 1,
@@ -41,7 +34,7 @@ export default {
                 {
                     id: 2,
                     nameEN: 'ABOUT',
-                    nameES: 'SOBRE',
+                    nameES: 'SOBRE MI',
                     to: '/about',
                     icon: 'user'
                 },
@@ -60,11 +53,6 @@ export default {
                     icon: 'at'
                 }
             ]
-        }
-    },
-    methods: {
-        changeLang() {
-            return this.lang = !this.lang
         }
     },
     components: {
@@ -168,19 +156,7 @@ ul.nav-bar a:hover,
 ul.nav-bar a.router-link-active,
 ul.nav-bar a.router-link-exact-active {
     color: #fff; 
-}
-ul.nav-bar button {
-    background: rgba(0,0,0,0);
-    color: #9e9e9e;
-    font-size: 20px;
-    border: none;
-    margin: 0px;
-    padding: 0px;
-    cursor: pointer;
-    outline: none;
-}
-ul.nav-bar button:active,
-ul.nav-bar button:hover {
-    color: #fff;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
 }
 </style>

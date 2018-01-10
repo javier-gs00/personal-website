@@ -1,12 +1,15 @@
 <template>
     <div class="about-container">
         <div class="about">
-            <h1>A little bit about me...</h1>
+            <h1>{{ lang === 'english' ? 'A little bit about me...' : 'Un poco acerca de mí...'}}</h1>
             <div class="line"></div>
-            <!-- <p>{{ langEn ? 'true' : 'false' }}</p><button @click="changeLang">Swap</button> -->
-            <p>I am a web developer with a drive for creating applications that provide value to people.</p>
-            <p>To achieve this, a lot of my time is spent learning about new methodologies and technologies that would provide the end user a pleasant experience.</p>
-            <p>Want to know the specifics? Check out my work history on 
+            <p>{{ lang === 'english' ? 
+                'I am a web developer with a drive for creating applications that provide value to people.'
+                : 'Soy un desarrollador web que posee una gran motivación para la creación de aplicaciones que provean valor para las personas.'}}</p>
+            <p>{{ lang === 'english' ? 
+                'To achieve this, a lot of my time is spent learning about new methodologies and technologies that would provide the end user a pleasant experience.'
+                : 'Para poder cumplir con esto, dedico gran parte de mi tiempo aprendiendo sobre nuevas metodologias y tecnologias que puedan proveer al usuario una experiencia agradable' }}</p>
+            <p>{{lang === 'english' ? 'Want to know the specifics? Check out my work history on ' : '¿Me quieres conocer más en detalle? Puedes revisar mi historia en ' }}
                 <a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank">LinkedIn</a>
                  <a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a>
             </p>
@@ -19,23 +22,7 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 export default {
     name: "about",
     props: {
-        lang: Boolean
-    },
-    data() {
-        return {
-            langEn: true
-        }
-    },
-    computed: {
-        logEn: function() {
-            return console.log(this.langEn)
-        }
-    },
-    methods: {
-        changeLang: function() {
-            console.log(this.lang)
-            return this.langEn = !this.langEn
-        }
+        lang: String
     },
     components: {
         FontAwesomeIcon
