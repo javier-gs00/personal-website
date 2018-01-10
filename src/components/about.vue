@@ -2,6 +2,8 @@
     <div class="about-container">
         <div class="about">
             <h1>A little bit about me...</h1>
+            <div class="line"></div>
+            <!-- <p>{{ langEn ? 'true' : 'false' }}</p><button @click="changeLang">Swap</button> -->
             <p>I am a web developer with a drive for creating applications that provide value to people.</p>
             <p>To achieve this, a lot of my time is spent learning about new methodologies and technologies that would provide the end user a pleasant experience.</p>
             <p>Want to know the specifics? Check out my work history on 
@@ -16,7 +18,25 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 export default {
     name: "about",
-
+    props: {
+        lang: Boolean
+    },
+    data() {
+        return {
+            langEn: true
+        }
+    },
+    computed: {
+        logEn: function() {
+            return console.log(this.langEn)
+        }
+    },
+    methods: {
+        changeLang: function() {
+            console.log(this.lang)
+            return this.langEn = !this.langEn
+        }
+    },
     components: {
         FontAwesomeIcon
     }
@@ -61,11 +81,11 @@ export default {
     padding: 10px;
 }
 .about h1 {
-    font-weight: 300;
+    margin: 20px 0;
 }
 @media only screen and (max-width: 599px) {
     .about h1 {
-        font-weight: 300;
+        margin: 0;
     }
 }
 .about a {

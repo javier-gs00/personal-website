@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Navigation />
+    <Navigation :lang='langEn'/>
     <div class="main-container">
-      <router-view/>
+      <router-view :lang="langEn"/>
     </div>
   </div>
 </template>
@@ -12,6 +12,12 @@ import Navigation from './components/navigation'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      langEn: true
+    }
+  },
+
   components: {
     Navigation
   }

@@ -2,7 +2,9 @@
     <div class="home-container">
         <div class="home-content">
             <h1>Javier Gutiérrez</h1>
-            <span>Web Developer</span>
+            <div class="line"></div>
+            <span>{{ langEn ? en : es }}</span>
+            <!-- <button @click="changeLang" :value="langEn">Swap</button> -->
         </div>
     </div>
 </template>
@@ -10,9 +12,20 @@
 <script>
 export default {
     name: "home",
+    props: {
+        lang: Boolean
+    },
     data() {
         return {
-            show: true
+            langEn: this.lang,
+            es: 'Desarrollador Web',
+            en: 'Web Developer'
+        }
+    },
+
+    methods: {
+        changeLang: function (e) {
+            return this.langEn = !this.langEn
         }
     }
 }
@@ -62,6 +75,12 @@ export default {
     .home-content span {
         font-size: 20px;
     }
+}
+.home-content .line {
+    height: 1px;
+    margin: 5px 0;
+    background: #000;
+    width: 62%;
 }
 /* Vue transtion effects */
 .fade-enter-active, .fade-leave-active {

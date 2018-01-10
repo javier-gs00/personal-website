@@ -1,7 +1,23 @@
 <template>
     <div class="work-container">
-        <div class="project">
-            <h1>Project Pets</h1>
+        <div v-for="project in projects" :key="project.id" class="project">
+            <h1>{{ project.title }}</h1>
+            <p v-for="paragraph in project.paragraphs" :key="paragraph.key">
+                {{ paragraph.text }}
+                <a v-if="paragraph.url" :href="paragraph.url" target="blank">here</a>
+                <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a>
+            </p>
+            <div class="technologies">
+                <span v-for="technology in project.technologiesUsed" :key="technology.key" :class="technology.class">                  
+                    <font-awesome-icon v-if="technology.icon" :icon="['fab', technology.icon]" :size="technology.size" />
+                    {{ technology.text }}
+                    <MongoDbSvg v-if="technology.mongo" />
+                    <img v-if="technology.img === 'vue'" src="../assets/logo.png" />
+                </span>
+            </div>
+        </div>
+        <!-- <div class="project">
+            <h1>Project Pets <a href="https://project-pets-client.herokuapp.com" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></h1>
             <p>The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.</p>
             <p>Did I peek your interest? You can check the progress of this project <a href="https://project-pets-client.herokuapp.com" target="blank">here</a> <a href="https://project-pets-client.herokuapp.com" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></p>
             <p>The main technologies used in this project are the following. </p>
@@ -21,7 +37,7 @@
             <div class="technologies">
                 <span class="vue"><img src="../assets/logo.png"/></span>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -32,6 +48,85 @@ import MongoDbSvg from '../assets/mongodb'
 
 export default {
     name: "work",
+    data() {
+        return {
+            projects: [
+                {
+                    id: 1,
+                    title: 'Project Pets',
+                    paragraphs: [
+                        {
+                            key: 1,
+                            text: 'The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.'
+                        },
+                        {
+                            key: 2,
+                            text: 'Did I peek your interest? You can check the progress of this project ',
+                            url: 'https://project-pets-client.herokuapp.com',
+                        },
+                        {
+                            key: 3,
+                            text: 'The main technologies used in this project are the following.'
+                        }
+                    ],
+                    technologiesUsed: [
+                        {
+                            key: 1,
+                            class: 'react',
+                            icon: 'react',
+                            size: '2x'
+                        },
+                        {
+                            key: 2,
+                            class: 'react react-text',
+                            text: 'React'
+                        },
+                        {
+                            key: 3,
+                            class: 'express',
+                            text: 'Express'
+                        },
+                        {
+                            key: 4,
+                            class: 'nodejs',
+                            icon: 'node',
+                            size: '2x'
+                        },
+                        {
+                            key: 5,
+                            mongo: true
+                        }
+                    ]
+                },
+                {
+                    id: 2,
+                    title: 'This Website',
+                        paragraphs: [
+                        {
+                            key: 1,
+                            text: 'This website was made using Vue.js.'
+                        },
+                        {
+                            key: 2,
+                            text: 'You can learn more about this amazing javascript framework from ',
+                            url: 'https://vuejs.org',
+                        },
+                        {
+                            key: 3,
+                            text: 'The main technologies used in this project are the following.'
+                        }
+                    ],
+                    technologiesUsed: [
+                        {
+                            key: 1,
+                            class: 'vue',
+                            img: 'vue',
+                        }
+                    ]
+                }
+            ]
+        }
+    },
 
     components: {
         FontAwesomeIcon,

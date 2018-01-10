@@ -2,29 +2,17 @@
     <div class="nav-container">
         <!-- <span class="logo">Javier</span> -->
         <ul class="nav-bar">
-            <li class="nav-item">
-                <router-link to="/home">
-                    <font-awesome-icon :icon="faHome" />
-                    <span class="nav-text">HOME</span>
-                </router-link>
+            <li v-for="navItem in navItems" :key="navItem.id" class="nav-item">
+                <router-link :to="navItem.to">
+                    <font-awesome-icon :icon="['fas', navItem.icon]" />
+                    <span class="nav-text">{{ langEn ? navItem.nameEN : navItem.nameES }}</span>
+                </router-link> 
             </li>
             <li class="nav-item">
-                <router-link to="/about">
-                    <font-awesome-icon :icon="faUser" />
-                    <span class="nav-text">ABOUT</span>
-                </router-link>
-            </li>
-            <li class="nav-item">
-                <router-link to="/work">
-                    <font-awesome-icon :icon="faBriefcase" />
-                    <span class="nav-text">WORK</span>
-                </router-link>
-            </li>
-            <li class="nav-item">
-                <router-link to="/contact">
-                    <font-awesome-icon :icon="faAt" />
-                    <span class="nav-text">CONTACT</span>
-                </router-link>
+                <button class="lang-swap" @click="changeLang">
+                    <font-awesome-icon :icon="['fas', 'globe']" />
+                    <span class="nav-text">{{ 'EN / ES' }}</span>
+                </button>
             </li>
         </ul>
     </div>
@@ -32,26 +20,53 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import { faHome, faUser, faBriefcase, faAt } from '@fortawesome/fontawesome-free-solid'
+import solids from '@fortawesome/fontawesome-free-solid'
 
 export default {
     name: "navigation",
-
-    computed: {
-        faHome() {
-            return faHome
-        },
-        faUser() {
-            return faUser
-        },
-        faBriefcase() {
-            return faBriefcase
-        },
-        faAt() {
-            return faAt
+    props: {
+        lang: Boolean
+    },
+    data() {
+        return {
+            langEn: this.lang,
+            navItems: [
+                {
+                    id: 1,
+                    nameEN: 'HOME',
+                    nameES: 'INICIO',
+                    to: '/home',
+                    icon: 'home'
+                },
+                {
+                    id: 2,
+                    nameEN: 'ABOUT',
+                    nameES: 'SOBRE',
+                    to: '/about',
+                    icon: 'user'
+                },
+                {
+                    id: 3,
+                    nameEN: 'WORK',
+                    nameES: 'TRABAJO',
+                    to: '/work',
+                    icon: 'briefcase'
+                },
+                {
+                    id: 4,
+                    nameEN: 'CONTACT',
+                    nameES: 'CONTACTO',
+                    to: '/contact',
+                    icon: 'at'
+                }
+            ]
         }
     },
-
+    methods: {
+        changeLang() {
+            return this.lang = !this.lang
+        }
+    },
     components: {
         FontAwesomeIcon
     }
@@ -64,12 +79,15 @@ export default {
     margin-top: 20px;
     text-align: center;
 }
+.nav-container {
+    background: #000;
+    box-shadow: 2px 0 4px 1px rgba(0, 0, 0, .3);
+}
 @media only screen and (max-width: 599px){
     .nav-container {
         bottom: 0px;
         width: 100%;
         position: fixed;
-        background: #fff;
         box-shadow: 0 1px 6px 2px rgba(0, 0, 0, .3);
     }
 }
@@ -77,8 +95,6 @@ export default {
     .nav-container {
         flex-basis: 50px;
         min-width: 50px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
         display: flex;
         flex-direction: column;
     }
@@ -87,8 +103,6 @@ export default {
     .nav-container {
         flex-basis: 250px;
         min-width: 250px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
         display: flex;
         flex-direction: column;
     }   
@@ -121,7 +135,7 @@ export default {
 }
 @media only screen and (max-width: 599px){
     .nav-item {
-        flex-basis: 25%;
+        flex-basis: 20%;
         display: flex;
         justify-content: center;
     }
@@ -152,7 +166,21 @@ ul.nav-bar a {
 }
 ul.nav-bar a:hover,
 ul.nav-bar a.router-link-active,
-ul.nav-bar a.router-link-exact-active { 
-    color: #465a64;
+ul.nav-bar a.router-link-exact-active {
+    color: #fff; 
+}
+ul.nav-bar button {
+    background: rgba(0,0,0,0);
+    color: #9e9e9e;
+    font-size: 20px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    outline: none;
+}
+ul.nav-bar button:active,
+ul.nav-bar button:hover {
+    color: #fff;
 }
 </style>
