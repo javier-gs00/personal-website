@@ -1,8 +1,10 @@
 <template>
     <div class="contact-container">
         <div class="contact-card">
-            <h1>Want to get in touch?</h1>
-            <p>Just send me a message in any of my social media accounts and I will get back to you.</p>
+            <h1>{{ lang === 'english'? 'Want to get in touch?' : 'Estemos en contacto'}}</h1>
+            <p>{{ lang === 'english' ? 
+                'Just send me a message in any of my social media accounts and I will get back to you.'
+                : 'Envíame un mensaje en cualquiera de mis redes sociales y respondere tan pronto como pueda'}}</p>
             <div v-for="contact in contacts" :key="contact.id" class="social-media-contact">
                 <span :class="contact.class"><font-awesome-icon :icon='["fab", contact.logo]'/></span>
                 <span><a :href="contact.link" target="blank">{{ contact.text }}</a>
@@ -33,6 +35,9 @@ import brands from '@fortawesome/fontawesome-free-brands'
 
 export default {
     name: "contact",
+    props: {
+        lang: String
+    },
     
     data() {
         return {

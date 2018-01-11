@@ -1,10 +1,10 @@
 <template>
     <div class="work-container">
         <div v-for="project in projects" :key="project.id" class="project">
-            <h1>{{ project.title }}</h1>
+            <h1>{{ lang === 'english' ? project.titleEN : project.titleES }}</h1>
             <p v-for="paragraph in project.paragraphs" :key="paragraph.key">
-                {{ paragraph.text }}
-                <a v-if="paragraph.url" :href="paragraph.url" target="blank">here</a>
+                {{ lang === 'english' ? paragraph.textEN : paragraph.textES }}
+                <a v-if="paragraph.url" :href="paragraph.url" target="blank">{{lang === 'english' ? 'here' : 'acá'}}</a>
                 <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a>
             </p>
             <div class="technologies">
@@ -48,25 +48,32 @@ import MongoDbSvg from '../assets/mongodb'
 
 export default {
     name: "work",
+    props: {
+        lang: String
+    },
     data() {
         return {
             projects: [
                 {
                     id: 1,
-                    title: 'Project Pets',
+                    titleEN: 'Pets Bazaar',
+                    titleES: 'Pets Bazaar',
                     paragraphs: [
                         {
                             key: 1,
-                            text: 'The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.'
+                            textEN: 'The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.',
+                            textES: 'El propósito de este proyecto es ayudar a los dueños de mascotas encontrar los productos de mascotas que mejor se ajusten a su situación, como tambien proveer una forma fácil de encontrar veterinarias y tiendas para mascotas.'
                         },
                         {
                             key: 2,
-                            text: 'Did I peek your interest? You can check the progress of this project ',
+                            textEN: 'Did I peek your interest? You can check the progress of this project ',
+                            textES: '¿Te interesa saber más? Puedes ver el avance de este proyecto ',
                             url: 'https://project-pets-client.herokuapp.com',
                         },
                         {
                             key: 3,
-                            text: 'The main technologies used in this project are the following.'
+                            textEN: 'The main technologies used in this project are the following.',
+                            textES: 'Las siguientes tecnologías fueron usadas en este proyecto.'
                         }
                     ],
                     technologiesUsed: [
@@ -100,20 +107,24 @@ export default {
                 },
                 {
                     id: 2,
-                    title: 'This Website',
+                    titleEN: 'This Website',
+                    titleES: 'Este sitio',
                         paragraphs: [
                         {
                             key: 1,
-                            text: 'This website was made using Vue.js.'
+                            textEN: 'This website was made using Vue.js.',
+                            textES: 'Este sitio fue creado usando Vue.js.'
                         },
                         {
                             key: 2,
-                            text: 'You can learn more about this amazing javascript framework from ',
+                            textEN: 'You can learn more about this amazing javascript framework from ',
+                            textES: 'Puedes aprender más sobre este framework para javascript ',
                             url: 'https://vuejs.org',
                         },
                         {
                             key: 3,
-                            text: 'The main technologies used in this project are the following.'
+                            textEN: 'The main technologies used in this project are the following.',
+                            textES: 'Las siguientes tecnologías fueron usadas en este proyecto.'
                         }
                     ],
                     technologiesUsed: [

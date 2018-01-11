@@ -17,8 +17,8 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      component: Home,
-      props: true
+      component: Home 
+      // props: true
     },
     {
       path: '/about',
