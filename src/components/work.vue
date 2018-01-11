@@ -5,7 +5,7 @@
             <p v-for="paragraph in project.paragraphs" :key="paragraph.key">
                 {{ lang === 'english' ? paragraph.textEN : paragraph.textES }}
                 <a v-if="paragraph.url" :href="paragraph.url" target="blank">{{lang === 'english' ? 'here' : 'acá'}}</a>
-                <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a>
+                <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon='external-link-alt' size="xs"/></a>
             </p>
             <div class="technologies">
                 <span v-for="technology in project.technologiesUsed" :key="technology.key" :class="technology.class">                  
@@ -43,7 +43,7 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import brands from '@fortawesome/fontawesome-free-brands'
+// import brands from '@fortawesome/fontawesome-free-brands'
 import MongoDbSvg from '../assets/mongodb'
 
 export default {

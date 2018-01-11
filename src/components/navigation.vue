@@ -4,7 +4,8 @@
         <ul class="nav-bar">
             <li v-for="navItem in navItems" :key="navItem.id" class="nav-item">
                 <router-link :to="navItem.to">
-                    <font-awesome-icon :icon="['fas', navItem.icon]" />
+                    <!-- <font-awesome-icon :icon="['fas', navItem.icon]" /> -->
+                    <font-awesome-icon :icon="navItem.icon" />
                     <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
                 </router-link> 
             </li>
@@ -14,7 +15,7 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import solids from '@fortawesome/fontawesome-free-solid'
+// import solids from '@fortawesome/fontawesome-free-solid'
 
 export default {
     name: "navigation",
