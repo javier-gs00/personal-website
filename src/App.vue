@@ -42,6 +42,8 @@ body {
   height: 100%;
   margin: 0;
   background: #fafafa;
+  /* background: linear-gradient(141deg, #6a0080, #9c27b0, #d05ce3, #67daff, #03a9f4, #007ac1); */
+  /* background: linear-gradient(141deg, #9c27b0, #03a9f4); */
 }
 h1 {
   font-family: 'Playfair Display', serif;
@@ -54,7 +56,8 @@ a, p, span, input {
 }
 a {
     text-decoration: none;
-    color: #2e2e2e;
+    /* color: #2e2e2e; */
+    color:#2196f3;
 }
 .logo {
   font-family: 'Playfair Display', serif;

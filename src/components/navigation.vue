@@ -69,7 +69,7 @@ export default {
     text-align: center;
 }
 .nav-container {
-    background: #000;
+    background: #fff;
     box-shadow: 2px 0 4px 1px rgba(0, 0, 0, .3);
 }
 @media only screen and (max-width: 599px){
@@ -101,6 +101,7 @@ export default {
         margin: 0;
         padding: 0;
         display: flex;
+        display: -webkit-flex;
     }
 }
 @media only screen and (min-width: 600px) {
@@ -124,7 +125,7 @@ export default {
 }
 @media only screen and (max-width: 599px){
     .nav-item {
-        flex-basis: 20%;
+        flex-basis: 25%;
         display: flex;
         justify-content: center;
     }
@@ -151,12 +152,13 @@ export default {
     }
 }
 ul.nav-bar a {
-    color: #9e9e9e;
+    /* color: #9e9e9e; */
+    color: #c7c7c7;
 }
 ul.nav-bar a:hover,
 ul.nav-bar a.router-link-active,
 ul.nav-bar a.router-link-exact-active {
-    color: #fff; 
+    color: #03a9f4;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
 }

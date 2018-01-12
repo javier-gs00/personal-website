@@ -5,7 +5,7 @@
             <p v-for="paragraph in project.paragraphs" :key="paragraph.key">
                 {{ lang === 'english' ? paragraph.textEN : paragraph.textES }}
                 <a v-if="paragraph.url" :href="paragraph.url" target="blank">{{lang === 'english' ? 'here' : 'acá'}}</a>
-                <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon='external-link-alt' size="xs"/></a>
+                <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon="['fas', 'external-link-alt']" size="xs"/></a>
             </p>
             <div class="technologies">
                 <span v-for="technology in project.technologiesUsed" :key="technology.key" :class="technology.class">                  
@@ -72,8 +72,8 @@ export default {
                         },
                         {
                             key: 3,
-                            textEN: 'The main technologies used in this project are the following.',
-                            textES: 'Las siguientes tecnologías fueron usadas en este proyecto.'
+                            textEN: 'Main technologies used...',
+                            textES: 'Principales tecnologias usadas...'
                         }
                     ],
                     technologiesUsed: [
@@ -107,24 +107,24 @@ export default {
                 },
                 {
                     id: 2,
-                    titleEN: 'This Website',
-                    titleES: 'Este sitio',
+                    titleEN: 'My Personal Website',
+                    titleES: 'Mi Sitio Personal',
                         paragraphs: [
                         {
                             key: 1,
-                            textEN: 'This website was made using Vue.js.',
-                            textES: 'Este sitio fue creado usando Vue.js.'
+                            textEN: "This is my own canvas, where I'll be trying out new things often just for the fun of it. ",
+                            textES: 'Este es mi propio lienzo, donde estaré probando nuevas cosas en forma constante sólo porque puedo.'
                         },
                         {
                             key: 2,
-                            textEN: 'You can learn more about this amazing javascript framework from ',
-                            textES: 'Puedes aprender más sobre este framework para javascript ',
+                            textEN: 'This website was made using Vue.js. You can learn more about this javascript framerwork from ',
+                            textES: 'El sitio fue hecho usando Vue.js. Puedes aprender más sobre este framework para javascript ',
                             url: 'https://vuejs.org',
                         },
                         {
                             key: 3,
-                            textEN: 'The main technologies used in this project are the following.',
-                            textES: 'Las siguientes tecnologías fueron usadas en este proyecto.'
+                            textEN: 'Main technologies used...',
+                            textES: 'Principales tecnologias usadas...'
                         }
                     ],
                     technologiesUsed: [

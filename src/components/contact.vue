@@ -7,7 +7,7 @@
                 : 'Envíame un mensaje en cualquiera de mis redes sociales y respondere tan pronto como pueda'}}</p>
             <div v-for="contact in contacts" :key="contact.id" class="social-media-contact">
                 <span :class="contact.class"><font-awesome-icon :icon='["fab", contact.logo]'/></span>
-                <span><a :href="contact.link" target="blank">{{ contact.text }}</a>
+                <span><a :href="contact.link" class="contact-text" target="blank">{{ contact.text }}</a>
                         <a :href="contact.link" target="blank"><font-awesome-icon :icon="['fas', 'external-link-alt']" size="xs"/></a></span>
             </div>
             <!-- <div class="social-media-contact">
@@ -127,6 +127,9 @@ export default {
 }
 .social-media-contact span {
     margin: 10px 5px;
+}
+.social-media-contact a {
+    color: #000;
 }
 .linkedin {
     color: #0084bf;
