@@ -96,7 +96,7 @@ export default {
                         {
                             key: 4,
                             class: 'nodejs',
-                            icon: 'node',
+                            icon: 'node-js',
                             size: '2x'
                         },
                         {
@@ -234,7 +234,8 @@ span.react-text {
     color: rgb(80, 80, 80);
 }
 .nodejs {
-    color: #026e00;
+    /* color: #026e00; */
+    color: #339933;
 }
 span.vue img {
     height: 48px;
