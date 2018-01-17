@@ -82,7 +82,6 @@ export default {
         margin: 10px 0 10px 100px;
         width: 400px;
         height: 400px;
-        border-radius: 2px;
     });
 }
 .about h1 {

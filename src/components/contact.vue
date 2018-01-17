@@ -1,6 +1,7 @@
 <template>
     <div class="contact-container">
         <div class="contact-card">
+            <div class="contact-line"></div>
             <h1>{{ lang === 'english' ? 'Want to get in touch?' : 'Estemos en contacto'}}</h1>
             <p>{{ lang === 'english' 
                 ? 'Just send me a message in any of my social media accounts and I will get back to you.'
@@ -26,6 +27,7 @@
                 <span><a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></span>
             </div> -->
         </div>
+        <div class="contact-img"></div>
     </div>
 </template>
 
@@ -76,16 +78,30 @@ export default {
 @import (reference) '../assets/style/style.less';
 
 .contact-container {
-    margin: 30px 0;
-    height: 90%;
-    display: flex;
-    align-items: top;
-    justify-content: center;
+    background: @accent;
+
+    .for-phone-only({
+        margin: 30px 0;
+        height: 90%;
+        display: flex;
+        align-items: top;
+        justify-content: center;
+
+    });
+    
+    .for-desktop-up({
+        margin: 30px 40px;
+        // width: 1200px;
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    });
 }
 .contact-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
-    background: @accent;
-    border-radius: 2px;
+    padding: 10px;
 
     .for-phone-only({
         margin: 10px;
@@ -102,15 +118,18 @@ export default {
     //     max-width: 500px;
     // });
     .for-desktop-up({
-        // margin: 20px;
-        width: 600px;
-        height: 30%;
-        padding: 20px 15px;
-        max-width: 500px;
+        margin: 10px 0 10px 100px;
+        width: 400px;
+        height: 400px;
     });    
 }
+.contact-card .contact-line {
+    background: @primary;
+    height: 2px;
+    width: 100px;
+    margin-top: 10px;
+}
 .contact-card h1 {
-    margin: 0;
     color: @primary;
 
     .for-phone-only({
@@ -120,6 +139,13 @@ export default {
 }
 .contact-card p {
     color: @primary;
+}
+.contact-img {
+    margin: 10px 100px 10px 0;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    background-image: url('../assets/img/pexels-photo.jpg'); 
 }
 .social-media-contact {
     display: flex;

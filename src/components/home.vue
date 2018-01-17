@@ -82,9 +82,10 @@ export default {
 .home-content button {
     background: transparent;
     color: @accent;
-    border-width: 1px;
-    border-color: @accent;
-    border-style: solid;
+    // border-width: 1px;
+    // border-color: @accent;
+    // border-style: solid;
+    border: 1px solid @accent;
     border-radius: 2px;
     padding: 5px 15px;
     font-size: 20px;
