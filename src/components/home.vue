@@ -101,7 +101,7 @@ export default {
         margin: 0px;
     });
 
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         position: absolute;
         // z-index: 3;
         bottom: 10px;

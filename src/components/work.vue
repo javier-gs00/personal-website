@@ -22,34 +22,11 @@
             <div class="project-img" :class="projects[activeProjectId].imageClass"></div>
         </div>
         <button @click="nextActiveProjectId" class="btn-project">&#8250;</button>
-        <!-- <div class="project">
-            <h1>Project Pets <a href="https://project-pets-client.herokuapp.com" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></h1>
-            <p>The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.</p>
-            <p>Did I peek your interest? You can check the progress of this project <a href="https://project-pets-client.herokuapp.com" target="blank">here</a> <a href="https://project-pets-client.herokuapp.com" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></p>
-            <p>The main technologies used in this project are the following. </p>
-            <div class="technologies">
-                <span class="react"><font-awesome-icon :icon="['fab', 'react']" size="2x"/></span>
-                <span class="react react-text">React</span>
-                <span class="express">Express</span>
-                <span class="nodejs"><font-awesome-icon :icon="['fab', 'node']" size="2x"/></span>
-                <span><MongoDbSvg /></span>
-            </div>
-        </div>
-        <div class="project">
-            <h1>This website</h1>
-            <p>This website was made using Vue.js.</p>
-            <p>You can learn more about this amazing javascript framework from the <a href="https://vuejs.org" target="blank">official website</a> <a href="https://vuejs.org" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></p>
-            <p>The main technologies used in this project are the following. </p>
-            <div class="technologies">
-                <span class="vue"><img src="../assets/logo.png"/></span>
-            </div>
-        </div> -->
     </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-// import brands from '@fortawesome/fontawesome-free-brands'
 import MongoDbSvg from '../assets/mongodb'
 
 export default {
@@ -190,15 +167,17 @@ export default {
     // .for-tablet-landscape-up({
     //     margin: 250px 150px;
     // });
-    .for-desktop-up({
-        margin: 30px 40px;
-        // width: 1200px;
+    .for-tablet-landscape-up({
+        margin: 20px 0px;
         width: 100%;
         height: 80%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+    });
+    .for-desktop-up({
+        margin: 30px 40px;       
     });
     .for-big-desktop-up({
         margin: 50px 50px;
@@ -223,16 +202,12 @@ export default {
     color: @primary-light;
 }
 .project {
-    // background: @primary;
-    background: @accent;
-
     .for-phone-only({
         padding: 10px;
         margin: 0 auto 20px;
         margin: 0 0 10px 0;
     });
-
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -242,10 +217,13 @@ export default {
 .project-content {
     padding: 10px;
 
-    .for-desktop-up({
-        margin: 10px 0 10px 100px;
+    .for-tablet-landscape-up({
+        margin: 10px 0 10px 50px;
         width: 400px;
         height: 400px;
+    });
+    .for-desktop-up({
+        margin: 10px 0 10px 100px;
     });
 }
 .project-content .project-line {
@@ -255,12 +233,15 @@ export default {
     margin-top: 10px;
 }
 .project-img {
-    .for-desktop-up({
-        margin: 10px 100px 10px 0;
+    .for-tablet-landscape-up({
+        margin: 10px 50px 10px 0;
         padding: 10px;
         width: 400px;
         height: 400px;
         background-size: cover;
+    });
+    .for-desktop-up({
+        margin: 10px 100px 10px 0;
     });
 }
 .project-pets-img {
@@ -278,17 +259,24 @@ export default {
     border-color: transparent;
     border-style: solid;
     border-radius: 2px;
-    padding: 5px 15px;
-    font-size: 20px;
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
+    .for-tablet-landscape-up({
+        font-size: 20px;
+        border-width: 0px;
+    });
+    .for-desktop-up({
+        padding: 5px 15px;
+        font-size: 20px;
+    });
 }
 .btn-project:hover {
-    background: @primary;
-    color: @accent;
-    // border-color: @primary;
+    .for-desktop-up({
+        background: @primary;
+        color: @accent;
+    });
 }
 .technologies {
     .for-phone-only({

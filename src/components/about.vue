@@ -50,8 +50,8 @@ export default {
     // .for-tablet-landscape-up({
     //     margin: 250px 150px;
     // });
-    .for-desktop-up({
-        margin: 30px 40px;
+    .for-tablet-landscape-up({
+        margin: 20px 0px;
         // width: 1200px;
         width: 100%;
         // height: 600px;
@@ -61,18 +61,14 @@ export default {
         align-items: center;
         justify-content: center;
     });
+    .for-desktop-up({
+        margin: 30px 40px;   
+    });
     .for-big-desktop-up({
         margin: 50px 50px;
-        // height: 820px;
     });
 }
-// .about-line {
-//     height: 1px;
-//     width: 100px;
-//     background: @primary;
-// }
 .about {
-    // background: @primary-light;
     background: @accent;
     padding: 10px;
 
@@ -83,10 +79,13 @@ export default {
         flex-direction: column;
         justify-content: center;
     });
-    .for-desktop-up({
-        margin: 10px 0 10px 100px;
+    .for-tablet-landscape-up({
+        margin: 10px 0 10px 50px;
         width: 400px;
         height: 400px;
+    });
+    .for-desktop-up({
+        margin: 10px 0 10px 100px;
     });
 }
 .about h1 {
@@ -112,10 +111,16 @@ export default {
     text-decoration: underline;
 }
 .about-img {
-    margin: 10px 100px 10px 0;
-    padding: 10px;
-    width: 400px;
-    height: 400px;
-    background-image: url('../assets/img/pexels-photo.jpg'); 
+    .for-tablet-landscape-up({
+        margin: 10px 50px 10px 0;
+        padding: 10px;
+        width: 400px;
+        height: 400px;
+        background-image: url('../assets/img/pexels-photo.jpg');
+
+    });
+    .for-desktop-up({
+        margin: 10px 100px 10px 0;
+    }) 
 }
 </style>

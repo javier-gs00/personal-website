@@ -94,9 +94,7 @@ export default {
         overflow: auto;
     });
 
-    .for-desktop-up({
-        // flex-basis: 250px;
-        // min-width: 250px;
+    .for-tablet-landscape-up({
         top: 0px;
         width: 100%;
         height: 60px;
@@ -115,20 +113,20 @@ export default {
         border-width: 0;
         font-size: 20px;
     });
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         display: none;
     })
 }
 .nav-container .logo-container {
     margin: 5px 30px;
 
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         margin: 10px 0 10px 30px;
         flex: .2;
     })
 }
 .logo {
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         font-size: 30px;
     })
 }
@@ -138,7 +136,7 @@ export default {
         flex-direction: column;
     });
 
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         flex: .8;
         margin: 10px 10px 10px 0;
         display: flex;
@@ -151,7 +149,7 @@ export default {
     color: @accent-light;
     margin: 5px 0px;
 
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         margin: 0 20px;
     })
 }
@@ -159,23 +157,27 @@ export default {
     .for-phone-only({
         display: none;
     });
-    .for-phone-only({
-        display: inline;
-        margin: 0 30px;
+    .for-tablet-landscape-up({
+        // display: inline;
+        // margin: 0 30px;
     });
 }
 .icon {
-    .for-desktop-up({
+    .for-tablet-landscape-up({
         display: none;
     })
 }
 .nav a:hover,
 .nav a.router-link-active,
 .nav a.router-link-exact-active {
-    color: @accent-dark;
-    font-weight: 600;
-    // text-decoration: underline;
-    transition: all 0.2s ease;
-    -webkit-transition: all 0.2s ease;
+    .for-tablet-landscape-up({
+        color: @accent;
+    });
+    .for-desktop-up({
+        color: @accent;
+        // font-weight: 600;
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+    });
 }
 </style>

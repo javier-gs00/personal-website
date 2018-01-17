@@ -88,16 +88,17 @@ export default {
         justify-content: center;
 
     });
-    
-    .for-desktop-up({
-        margin: 30px 40px;
-        // width: 1200px;
+    .for-tablet-landscape-up({
+        margin: 20px 0px;
         width: 100%;
         height: 80%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+    });
+    .for-desktop-up({
+        margin: 30px 40px;
     });
     .for-big-desktop-up({
         margin: 50px 50px;
@@ -120,10 +121,13 @@ export default {
     //     padding: 20px 15px;
     //     max-width: 500px;
     // });
-    .for-desktop-up({
-        margin: 10px 0 10px 100px;
+    .for-tablet-landscape-up({
+        margin: 10px 0 10px 50px;
         width: 400px;
         height: 400px;
+    });
+    .for-desktop-up({
+        margin: 10px 0 10px 100px;
     });    
 }
 .contact-card .contact-line {
@@ -144,11 +148,16 @@ export default {
     color: @primary;
 }
 .contact-img {
-    margin: 10px 100px 10px 0;
-    padding: 10px;
-    width: 400px;
-    height: 400px;
-    background-image: url('../assets/img/pexels-photo.jpg'); 
+    .for-tablet-landscape-up({
+        margin: 10px 50px 10px 0;
+        padding: 10px;
+        width: 400px;
+        height: 400px;
+        background-image: url('../assets/img/pexels-photo.jpg');
+    });
+    .for-desktop-up({
+        margin: 10px 100px 10px 0;
+    });
 }
 .social-media-contact {
     display: flex;
