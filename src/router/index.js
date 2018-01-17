@@ -9,7 +9,7 @@ import Contact from '@/components/contact'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -35,9 +35,9 @@ export default new Router({
       name: 'contact',
       component: Contact
     },
-    {
-      path: '*',
-      component: NotFound
-    }
+    // {
+    //   path: '*',
+    //   component: NotFound
+    // }
   ]
 })

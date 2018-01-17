@@ -32,7 +32,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import (reference) './assets/style/style.less';
+
 html {
   width: 100%;
   height: 100%;
@@ -41,32 +43,40 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: #fafafa;
-  /* background: linear-gradient(141deg, #6a0080, #9c27b0, #d05ce3, #67daff, #03a9f4, #007ac1); */
-  /* background: linear-gradient(141deg, #9c27b0, #03a9f4); */
+  background: @primary-dark;
 }
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 300;
+  color: @accent;
 }
 a, p, span, input {
   font-family: 'Muli', sans-serif;
   font-size: 20px;
+  color: @accent-light;
 }
 a {
-    text-decoration: none;
-    /* color: #2e2e2e; */
-    color:#2196f3;
+  text-decoration: none;
+  color: @accent-dark;
 }
 .logo {
   font-family: 'Playfair Display', serif;
 }
 #app {
-  display: flex;
   height: 100%;
 }
 .main-container {
+  position: fixed;
   width: 100%;
+  height: 100%;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.4)),
+  //                         url('./assets/img/santiago_landscape_1920x1080.jpg');
+  // background-size: cover; 
+  // position: fixed;
+  // z-index: -1;
 }
 </style>

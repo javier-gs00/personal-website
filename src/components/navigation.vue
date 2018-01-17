@@ -1,21 +1,35 @@
 <template>
     <div class="nav-container">
-        <!-- <span class="logo">Javier</span> -->
-        <ul class="nav-bar">
+        <button @click="showMenu">
+            <!-- <font-awesome-icon class="icon" :icon='["fas", menuButton]' /> -->
+            <span style="font-size: 24px;">&#9776;</span>
+            <span style="font-size: 32px;">&times;</span>
+        </button>
+        <div class="logo-container">
+            <router-link to="/home">
+                <span class="logo">JAVIER</span>
+            </router-link>
+        </div>
+        <div class="nav">
+            <router-link v-for="navItem in navItems" :key="navItem.id" :to="navItem.to">
+                <!-- <font-awesome-icon :icon="['fas', navItem.icon]" /> -->
+                <!-- <font-awesome-icon class="icon" :icon="navItem.icon" /> -->
+                <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
+            </router-link> 
+        </div>
+        <!-- <ul class="nav-bar">
             <li v-for="navItem in navItems" :key="navItem.id" class="nav-item">
                 <router-link :to="navItem.to">
-                    <!-- <font-awesome-icon :icon="['fas', navItem.icon]" /> -->
-                    <font-awesome-icon :icon="navItem.icon" />
+                    <font-awesome-icon class="icon" :icon="navItem.icon" />
                     <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
                 </router-link> 
             </li>
-        </ul>
+        </ul> -->
     </div>
 </template>
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-// import solids from '@fortawesome/fontawesome-free-solid'
 
 export default {
     name: "navigation",
@@ -27,33 +41,38 @@ export default {
             navItems: [
                 {
                     id: 1,
-                    nameEN: 'HOME',
-                    nameES: 'INICIO',
-                    to: '/home',
-                    icon: 'home'
-                },
-                {
-                    id: 2,
                     nameEN: 'ABOUT',
                     nameES: 'SOBRE MI',
                     to: '/about',
                     icon: 'user'
                 },
                 {
-                    id: 3,
+                    id: 2,
                     nameEN: 'WORK',
                     nameES: 'TRABAJO',
                     to: '/work',
                     icon: 'briefcase'
                 },
                 {
-                    id: 4,
+                    id: 3,
                     nameEN: 'CONTACT',
                     nameES: 'CONTACTO',
                     to: '/contact',
                     icon: 'at'
                 }
-            ]
+            ],
+            menuButton: 'bars'
+        }
+    },
+    methods: {
+        showMenu() {
+            if (this.menuButton === 'bars') {
+                this.menuButton = 'times'
+                document.getElementById('nav-container').style.display = 'block'
+            } else {
+                this.menuButton = 'bars'
+                document.getElementById('nav-container').style.display = 'none'
+            }
         }
     },
     components: {
@@ -62,103 +81,100 @@ export default {
 }
 </script>
 
-<style>
-.logo {
-    font-size: 30px;
-    margin-top: 20px;
-    text-align: center;
-}
+<style lang="less">
+@import (reference) '../assets/style/style.less';
+
 .nav-container {
-    background: #fff;
-    box-shadow: 2px 0 4px 1px rgba(0, 0, 0, .3);
-}
-@media only screen and (max-width: 599px){
-    .nav-container {
-        bottom: 0px;
-        width: 100%;
+    .for-phone-only({
+        display: block;
+        background: @primary-light;
+        height: 100%;
+        width: 200px;
         position: fixed;
-        box-shadow: 0 1px 6px 2px rgba(0, 0, 0, .3);
-    }
-}
-@media only screen and (min-width: 600px) {
-    .nav-container {
-        flex-basis: 50px;
-        min-width: 50px;
+        overflow: auto;
+    });
+
+    .for-desktop-up({
+        // flex-basis: 250px;
+        // min-width: 250px;
+        top: 0px;
+        width: 100%;
+        height: 60px;
         display: flex;
-        flex-direction: column;
-    }
+        flex-direction: row;
+        position: relative;
+        z-index: 1;
+    });    
 }
-@media only screen and (min-width: 1200px) {
-    .nav-container {
-        flex-basis: 250px;
-        min-width: 250px;
-        display: flex;
-        flex-direction: column;
-    }   
-}
-@media only screen and (max-width: 599px){
-    .nav-bar {
-        margin: 0;
+.nav-container button {
+    .for-phone-only({
+        outline: none;
+        margin: 15px 30px 10px;
         padding: 0;
-        display: flex;
-        display: -webkit-flex;
-    }
-}
-@media only screen and (min-width: 600px) {
-    .nav-bar {
-        margin: auto;
-        padding: 10px;
-        float: left;
-        list-style-type: none;
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .nav-bar {
-        margin: auto 0;
-        padding: 0 50px;
-        float: left;
-        list-style-type: none;
-    } 
-}
-.nav-item {
-    margin: 20px 0;
-}
-@media only screen and (max-width: 599px){
-    .nav-item {
-        flex-basis: 25%;
-        display: flex;
-        justify-content: center;
-    }
-}
-.nav-item span {
-    margin-inline-start: 5px;
-}
-@media only screen and (max-width: 599px){
-    .nav-item span{
-        margin-inline-start: 0px;
-    }
-    .nav-text {
+        background: transparent;
+        border-width: 0;
+        font-size: 20px;
+    });
+    .for-desktop-up({
         display: none;
-    }
+    })
 }
-@media only screen and (min-width: 600px) {
-    .nav-text {
+.nav-container .logo-container {
+    margin: 5px 30px;
+
+    .for-desktop-up({
+        margin: 10px 0 10px 30px;
+        flex: .2;
+    })
+}
+.logo {
+    .for-desktop-up({
+        font-size: 30px;
+    })
+}
+.nav-container .nav {
+    .for-phone-only({
+        display: flex;
+        flex-direction: column;
+    });
+
+    .for-desktop-up({
+        flex: .8;
+        margin: 10px 10px 10px 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    })
+}
+.nav a {
+    // color: @primary-dark;
+    color: @accent-light;
+    margin: 5px 0px;
+
+    .for-desktop-up({
+        margin: 0 20px;
+    })
+}
+.nav-text {
+    .for-phone-only({
         display: none;
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .nav-text {
+    });
+    .for-phone-only({
         display: inline;
-    }
+        margin: 0 30px;
+    });
 }
-ul.nav-bar a {
-    /* color: #9e9e9e; */
-    color: #c7c7c7;
+.icon {
+    .for-desktop-up({
+        display: none;
+    })
 }
-ul.nav-bar a:hover,
-ul.nav-bar a.router-link-active,
-ul.nav-bar a.router-link-exact-active {
-    color: #03a9f4;
+.nav a:hover,
+.nav a.router-link-active,
+.nav a.router-link-exact-active {
+    color: @accent-dark;
+    font-weight: 600;
+    // text-decoration: underline;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
 }

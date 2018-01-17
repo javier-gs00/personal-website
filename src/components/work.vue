@@ -56,8 +56,8 @@ export default {
             projects: [
                 {
                     id: 1,
-                    titleEN: 'Pets Bazaar',
-                    titleES: 'Pets Bazaar',
+                    titleEN: '01. Pets Bazaar',
+                    titleES: '01. Pets Bazaar',
                     paragraphs: [
                         {
                             key: 1,
@@ -107,8 +107,8 @@ export default {
                 },
                 {
                     id: 2,
-                    titleEN: 'My Personal Website',
-                    titleES: 'Mi Sitio Personal',
+                    titleEN: '00. My Personal Website',
+                    titleES: '00. Mi Sitio Personal',
                         paragraphs: [
                         {
                             key: 1,
@@ -146,71 +146,70 @@ export default {
 }
 </script>
 
-<style>
-@media only screen and (max-width: 599px) {
-    .work-container {
+<style lang="less">
+@import (reference) '../assets/style/style.less';
+
+.work-container {
+    .for-phone-only({
         margin: 10px 10px 65px 10px;
         overflow-y: hidden;
-    }
-}
-@media only screen and (min-width: 600px) {
-    .work-container {
-        margin: 150px 50px;
-    }
-}
-@media only screen and (min-width: 900px) {
-    .work-container {
-        margin: 250px 150px;
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .work-container {
-        margin: 150px 150px;
-    }
+    });
+    // .for-tablet-portrait-up({
+    //     margin: 150px 50px;
+    // });
+    // .for-tablet-landscape-up({
+    //     margin: 250px 150px;
+    // });
+    .for-desktop-up({
+        margin: 30px auto;
+    });    
 }
 .work-container .project {
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    // background: @primary;
     padding: 10px;
-    margin: 20px 0;
-}
-@media only screen and (max-width: 599px) {
-    .work-container .project {
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-        padding: 10px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    background: @accent;
+    border-radius: 2px;
+
+    .for-phone-only({
         margin: 0 0 10px 0;
-    }
+    });
+
+    .for-desktop-up({
+        width: 1000px;
+    });
 }
 .work-container h1 {
     margin: 20px 0;
     font-weight: 300;
-}
-@media only screen and (max-width: 599px) {
-    .work-container h1{
+    color: @primary;
+
+    .for-phone-only({
         margin: 0;
         font-weight: 300;
-    }
+    });
 }
 .work-container p {
     margin-bottom: 0;
+    color: @primary;
 }
 .work-container a {
     text-decoration: underline;
+    color: @primary-light;
 }
 .technologies {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin: 10px 0 5px 0;
-}
-@media only screen and (max-width: 599px) {
-    .technologies {
+
+    .for-phone-only({
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         margin: 10px 0 5px 0;
-    }
+    });
 }
 .technologies span {
     margin: 5px 10px;
@@ -222,18 +221,21 @@ span.react {
 span.react-text {
     margin-inline-start: 2px;
     font-weight: 700;
-}
-@media only screen and (max-width: 599px) {
-    span.react-text  {
+
+    .for-phone-only({
         display: none;
-    }
+    });
 }
 .express {
     font: 25px "Helvetica Neue","Open Sans",sans-serif;
     font-weight: 100;
+    background: #fff;
     color: rgb(80, 80, 80);
+    border-radius: 2px;
+    padding: 0 5px;
 }
 .nodejs {
+    /* https://nodejs.org/static/documents/foundation-visual-guidelines.pdf */
     /* color: #026e00; */
     color: #339933;
 }

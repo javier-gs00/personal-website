@@ -20,12 +20,14 @@ import user from '@fortawesome/fontawesome-free-solid/faUser'
 import briefcase from '@fortawesome/fontawesome-free-solid/faBriefcase'
 import at from '@fortawesome/fontawesome-free-solid/faAt'
 import externalLinkAlt from '@fortawesome/fontawesome-free-solid/faExternalLinkAlt'
+import bars from '@fortawesome/fontawesome-free-solid/faBars'
+import times from '@fortawesome/fontawesome-free-solid/faTimes'
 
 // fontAwesome.library.add(
 //   linkedin, github. codepen, react, node,
 //   home, user, briefcase, at, externalLinkAlt)
 
-fontAwesome.library.add(home, user, briefcase, at, externalLinkAlt)
+fontAwesome.library.add(home, user, briefcase, at, externalLinkAlt, bars, times)
 
 Vue.config.productionTip = false
 

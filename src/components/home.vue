@@ -19,24 +19,31 @@ export default {
 }
 </script>
 
-<style>
-@media only screen and (max-width: 599px){
-    .home-container {
+<style lang="less">
+@import (reference) '../assets/style/style.less';
+
+.home-container {
+    .for-phone-only({
         margin-top: 0;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
-    }
-}
-@media only screen and (min-width: 600px) {
-    .home-container {
-        margin-top: 0;
+    });
+    .for-tablet-portrait-up({
+        // relative to nav-container height
+        margin-top: -60px;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-    }
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.4)),
+                                url('../assets/img/santiago_landscape_1920x1080.jpg');
+        background-size: cover; 
+        position: fixed;
+        z-index: -1;
+    });
 }
 .home-content {
     display: flex;
@@ -44,73 +51,74 @@ export default {
     align-items: center;
     justify-content: center;
     height: 100%;
+    position: fixed;
 }
 .home-content h1 {
     font-size: 72px;
     font-weight: 300;
     margin: 0;
+
+    .for-phone-only({
+        font-size: 32px;
+    });
     /* background: -webkit-linear-gradient(#9c27b0, #03a9f4);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
-@media only screen and (max-width: 599px){
-    .home-content h1 {
-        font-size: 32px;
-        font-weight: 300px;
-        margin: 0;
-    }
-}
 .home-content span {
     font-size: 40px;
-}
-@media only screen and (max-width: 599px){
-    .home-content span {
+
+    .for-phone-only({
         font-size: 20px;
-    }
+    });
 }
 .home-content .line {
     height: 1px;
     margin: 5px 0;
-    background: #000;
+    background: @accent-light;
     width: 62%;
 }
 .home-content button {
-    top: 10px;
-    right: 10px;
-    position: fixed;
     background: transparent;
-    color: #2196f3;
+    color: @accent;
     border-width: 1px;
-    border-color: #2196f3;
+    border-color: @accent;
+    border-style: solid;
     border-radius: 2px;
     padding: 5px 15px;
     font-size: 20px;
-    margin: 0px;
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
-}
-.home-content button:active,
-.home-content button:hover {
-    color: #fff;
-    background: #2196f3;
-}
-@media only screen and (max-width: 1200px) {
-    .home-content button {
+
+    .for-phone-only({
         top: 10px;
         right: 10px;
+        position: relative;
+        margin: 0px;
+    });
+
+    .for-desktop-up({
+        position: absolute;
+        // z-index: 3;
+        bottom: 10px;
+        // right: 10px;
         padding: 5px 15px;
         font-size: 15px;
         margin: 0px;
-        /* transition: all 0.2s ease; */
-    }
-    .home-content button:active,
-    .home-content button:hover {
-        color: #2196f3;
-        background: transparent;
-    }
+    });
+}
+.home-content button:active,
+.home-content button:hover {
+    color: @accent;
+    background: transparent;
+
+    .for-desktop-up({
+        color: @primary;
+        background: @accent;
+    });
 }
 /* Vue transtion effects */
 .fade-enter-active, .fade-leave-active {

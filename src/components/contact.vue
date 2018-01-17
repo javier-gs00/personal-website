@@ -57,7 +57,7 @@ export default {
                 },
                 {
                     id: 3,
-                    logo: 'linkedin',
+                    logo: 'linkedin-in',
                     text: 'LinkedIn',
                     link: "https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/",
                     class: 'linkedin'
@@ -72,66 +72,71 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import (reference) '../assets/style/style.less';
+
 .contact-container {
+    margin: 30px 0;
+    height: 90%;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
 }
-@media only screen and (max-width: 599px) {
-    .contact-card {
+.contact-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    background: @accent;
+    border-radius: 2px;
+
+    .for-phone-only({
         margin: 10px;
         padding: 10px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    }
-}
-@media only screen and (min-width: 600px) {
-    .contact-card {
-        margin: 250px 50px;
+    });
+    // .for-tablet-portrait-up({
+    //     margin: 250px 50px;
+    //     padding: 20px 15px;
+    //     max-width: 500px;
+    // });
+    // .for-tablet-landscape-up({
+    //     margin: 250px 150px;
+    //     padding: 20px 15px;
+    //     max-width: 500px;
+    // });
+    .for-desktop-up({
+        // margin: 20px;
+        width: 600px;
+        height: 30%;
         padding: 20px 15px;
         max-width: 500px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    }
-}
-@media only screen and (min-width: 900px) {
-    .contact-card {
-        margin: 250px 150px;
-        padding: 20px 15px;
-        max-width: 500px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .contact-card {
-        margin: 300px 150px;
-        padding: 20px 15px;
-        max-width: 500px;
-        background: #fff;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    }
+    });    
 }
 .contact-card h1 {
     margin: 0;
-}
-@media only screen and (max-width: 599px) {
-    .contact-card h1 {
+    color: @primary;
+
+    .for-phone-only({
         margin: 0;
         font-weight: 300;
-    }
+    });
+}
+.contact-card p {
+    color: @primary;
 }
 .social-media-contact {
     display: flex;
 }
 .social-media-contact span {
+    color: @primary;
     margin: 10px 5px;
 }
 .social-media-contact a {
-    color: #000;
+    color: @primary;
 }
 .linkedin {
-    color: #0084bf;
+    // color: #0084bf;
+    color: #fff;
+    // background: #0084bf;
+    // padding: 1px 3px;
+    // border-radius: 2px;
+    // height: 20px;
 }
 </style>

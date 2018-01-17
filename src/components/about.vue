@@ -1,8 +1,8 @@
 <template>
     <div class="about-container">
         <div class="about">
+            <div class="about-line"></div>
             <h1>{{ lang === 'english' ? 'A little bit about me...' : 'Un poco acerca de mí...'}}</h1>
-            <div class="line"></div>
             <p>{{ lang === 'english' 
                 ? 'I am a web developer with a drive for creating applications that provide value to people.'
                 : 'Soy un desarrollador web que posee una gran motivación para la creación de aplicaciones que provean valor para las personas.'}}</p>
@@ -16,6 +16,7 @@
                  <a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank"><font-awesome-icon :icon="['fas', 'external-link-alt']" size="xs"/></a>
             </p>
         </div>
+        <div class="about-img"></div>
     </div>
 </template>
 
@@ -32,53 +33,85 @@ export default {
 }
 </script>
 
-<style>
-@media only screen and (max-width: 599px) {
-    .about-container {
+<style lang="less">
+@import (reference) '../assets/style/style.less';
+
+.main-container .about-container {
+    background: @accent;
+
+    .for-phone-only({
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
+    });
+    // .for-tablet-portrait-up({
+    //     margin: 250px 50px;
+    // });
+    // .for-tablet-landscape-up({
+    //     margin: 250px 150px;
+    // });
+    .for-desktop-up({
+        margin: 30px 40px;
+        // width: 1200px;
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    });
 }
-@media only screen and (min-width: 600px) {
-    .about-container {
-        margin: 250px 50px;
-    }
-}
-@media only screen and (min-width: 900px) {
-    .about-container {
-        margin: 250px 150px;
-    }
-}
-@media only screen and (min-width: 1200px) {
-    .about-container {
-        margin: 250px 150px;
-    }
-}
-@media only screen and (max-width: 599px) {
-    .about {
+// .about-line {
+//     height: 1px;
+//     width: 100px;
+//     background: @primary;
+// }
+.about {
+    // background: @primary-light;
+    background: @accent;
+    padding: 10px;
+
+    .for-phone-only({
         margin: 10px;
         padding: auto 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-}
-.about {
-    background: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-    padding: 10px;
+    });
+    .for-desktop-up({
+        margin: 10px 0 10px 100px;
+        width: 400px;
+        height: 400px;
+        border-radius: 2px;
+    });
 }
 .about h1 {
     margin: 20px 0;
-}
-@media only screen and (max-width: 599px) {
-    .about h1 {
+    color: @primary;
+
+    .for-phone-only({
         margin: 0;
-    }
+    });
+}
+.about .about-line {
+    background: @primary;
+    height: 2px;
+    width: 100px;
+    margin-top: 10px;
+}
+.about p {
+    color: @primary;
 }
 .about a {
+    color: @primary-light;
     cursor: pointer;
     text-decoration: underline;
+}
+.about-img {
+    margin: 10px 100px 10px 0;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    background-image: url('../assets/img/pexels-photo.jpg'); 
 }
 </style>
