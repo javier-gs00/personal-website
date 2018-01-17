@@ -194,12 +194,15 @@ export default {
         margin: 30px 40px;
         // width: 1200px;
         width: 100%;
-        height: 600px;
+        height: 80%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    });    
+    });
+    .for-big-desktop-up({
+        margin: 50px 50px;
+    });
 }
 .work-container h1 {
     margin: 20px 0;
@@ -257,7 +260,7 @@ export default {
         padding: 10px;
         width: 400px;
         height: 400px;
-        background-size: cover;    
+        background-size: cover;
     });
 }
 .project-pets-img {

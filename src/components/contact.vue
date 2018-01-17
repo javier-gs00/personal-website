@@ -93,11 +93,14 @@ export default {
         margin: 30px 40px;
         // width: 1200px;
         width: 100%;
-        height: 600px;
+        height: 80%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+    });
+    .for-big-desktop-up({
+        margin: 50px 50px;
     });
 }
 .contact-card {
