@@ -225,11 +225,14 @@ export default {
 }
 .project-content {
     padding: 10px;
-    .for-phone-and-tablet-portrait({
+    .for-phone-only({
         padding: 10px 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    });
+    .for-tablet-portrait-up({
+        margin: 10px 100px 50px;        
     });
     .for-tablet-landscape-up({
         margin: 10px 0 10px 50px;
@@ -259,26 +262,44 @@ export default {
     });
 }
 .project-pets-img {
-    .for-phone-and-tablet-portrait({
-        width: 100%;
-        height: 200px;
-        background-size: cover;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                    url('../assets/img/doggy1.jpg');
-    });
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                         url('../assets/img/doggy1.jpg');
-}
-.personal-website-img {
+    background-size: cover;
+
     .for-phone-and-tablet-portrait({
         width: 100%;
         height: 200px;
-        background-size: cover;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                    url('../assets/img/minimalist-desk-setup.jpg');
     });
+    .for-tablet-portrait-only({
+        width: 100%;
+        height: 400px;   
+    });
+    // .for-tablet-portrait-up({
+    //     height: 400px;
+    // });
+    // .for-tablet-landscape-up({
+    //     height: 400px;
+    // });
+}
+.personal-website-img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                         url('../assets/img/minimalist-desk-setup.jpg');
+    background-size: cover;
+
+    .for-phone-only({
+        width: 100%;
+        height: 200px;
+    });
+    .for-tablet-portrait-only({
+        width: 100%;
+        height: 400px;   
+    });
+    // .for-tablet-portrait-up({
+    //     height: 400px;        
+    // });
+    // .for-tablet-landscape-up({
+    //     height: auto;
+    // });
 }
 .btn-project {
     background: transparent;
@@ -310,9 +331,13 @@ export default {
     });
 }
 .mobile-btns-container {
-    padding: 10px 15px;
     display: inline;
-
+    .for-phone-only({
+        padding: 10px 15px;
+    });
+    .for-tablet-portrait-up({
+        padding: 10px 100px 50px;
+    });
     .for-tablet-landscape-up({
         display: none;
     });

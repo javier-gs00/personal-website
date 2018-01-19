@@ -27,7 +27,7 @@ export default {
       }
     },
     openNav(){
-      document.getElementById('nav').style.width = "200px"
+      document.getElementById('nav').style.width = "170px"
     }
   },
   components: {

@@ -134,7 +134,7 @@ export default {
         top: 0;
         right: 0;
         background-color: @primary-dark;
-        overflow-x: hidden;
+        // overflow-x: hidden;
         overflow-y: scroll;
         transition: 0.5s;
         padding-top: 60px;        

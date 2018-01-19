@@ -113,16 +113,13 @@ export default {
     padding: 10px;
 
     .for-phone-only({
-        // padding: 10px 15px;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-    });
-    .for-phone-and-tablet-portrait({
         padding: 10px 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    });
+    .for-tablet-portrait-up({
+        margin: 10px 100px 100px;
     });    
     .for-tablet-landscape-up({
         margin: 10px 0 10px 50px;
@@ -154,9 +151,15 @@ export default {
     });
 }
 .contact-img {
-    .for-phone-and-tablet-portrait({
+    .for-phone-only({
         width: 100%;
         height: 200px;
+        background-image: url('../assets/img/pexels-photo.jpg');
+        background-size: cover;
+    });
+    .for-tablet-portrait-up({
+        width: 100%;
+        height: 400px;
         background-image: url('../assets/img/pexels-photo.jpg');
         background-size: cover;
     });
@@ -166,6 +169,7 @@ export default {
         width: 400px;
         height: 400px;
         background-image: url('../assets/img/pexels-photo.jpg');
+        background-size: cover;
     });
     .for-desktop-up({
         margin: 10px 100px 10px 0;
