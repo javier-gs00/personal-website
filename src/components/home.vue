@@ -1,10 +1,10 @@
 <template>
     <div class="home-container">
         <div class="home-content">
-            <button @click="changeLang">{{ lang === 'english' ? 'ENGLISH' : 'ESPAÑOL' }}</button>
             <h1>Javier Gutiérrez</h1>
             <div class="line"></div>
             <span>{{ lang === 'english' ? 'Web Developer' : 'Desarrollador Web' }}</span>
+            <button @click="changeLang">{{ lang === 'english' ? 'ENGLISH' : 'ESPAÑOL' }}</button>
         </div>
     </div>
 </template>
@@ -42,10 +42,12 @@ export default {
         height: 100%;
         width: 100%;
         background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
-                        url('../assets/img/santiago_landscape_1920x1080.jpg');
-        background-size: cover;     
+                        url('../assets/img/santiago_landscape_1920x1080_portrait.jpg');
+        background-size: cover;
+        position: fixed;
+        // z-index: -1;     
     });
-    .for-tablet-portrait-up({
+    .for-tablet-landscape-up({
         // relative to nav-container height
         margin-top: -60px;
         display: flex;
@@ -57,7 +59,7 @@ export default {
                                 url('../assets/img/santiago_landscape_1920x1080.jpg');
         background-size: cover; 
         position: fixed;
-        z-index: -1;
+        // z-index: -1;
     });
 }
 .home-content {
@@ -71,7 +73,9 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;         
+        justify-content: center;
+        // height: 100%;
+        // position: fixed;         
     });
     .for-tablet-portrait-up({
         display: flex;
@@ -90,7 +94,7 @@ export default {
     // .for-phone-only({
     //     font-size: 32px;
     // });
-    .for-phone-and-tablet-portrait({
+    .for-phone-only({
         font-size: 32px;        
     });
     /* background: -webkit-linear-gradient(#9c27b0, #03a9f4);
@@ -104,7 +108,7 @@ export default {
     // .for-phone-only({
     //     font-size: 20px;
     // });
-    .for-phone-and-tablet-portrait({
+    .for-phone-only({
         font-size: 20px;        
     });
 }
@@ -137,7 +141,7 @@ export default {
     // });
     .for-phone-and-tablet-portrait({
         position: absolute;
-        z-index: 0;
+        // z-index: 1;
         bottom: 10px;
         font-size: 15px;     
     });
@@ -161,12 +165,5 @@ export default {
         color: @primary;
         background: @accent;
     });
-}
-/* Vue transtion effects */
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
 }
 </style>

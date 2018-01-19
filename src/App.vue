@@ -71,22 +71,18 @@ a {
   height: 100%;
 }
 .btn-open-nav {
-    display: inline;
-    float: right;
+    position: fixed;
+    z-index: 1;
+    // text-align: right;
+    // display: inline;
+    // float: right;
+    right: 0px;
     outline: none;
     padding: 10px 10px;
     background: transparent;
     border: 0px;
     font-size: 24px;
-    // .for-phone-only({
-    //     display: inline;
-    //     float: right;
-    //     outline: none;
-    //     padding: 10px 10px;
-    //     background: transparent;
-    //     border: 0px;
-    //     font-size: 24px;
-    // });
+
     .for-tablet-landscape-up({
         display: none;
     })
@@ -96,6 +92,9 @@ a {
   // .for-phone-only({
   //   height: 100%;
   // });
+  .for-phone-and-tablet-portrait({
+    // position: fixed;
+  });
   .for-tablet-landscape-up({
     position: fixed;
     width: 100%;

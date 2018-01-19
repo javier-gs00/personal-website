@@ -46,8 +46,8 @@ export default {
             projects: [
                 {
                     id: 0,
-                    titleEN: 'Pets Bazaar',
-                    titleES: 'Pets Bazaar',
+                    titleEN: '01. Pets Bazaar',
+                    titleES: '01. Pets Bazaar',
                     paragraphs: [
                         {
                             key: 1,
@@ -98,8 +98,8 @@ export default {
                 },
                 {
                     id: 1,
-                    titleEN: 'My Personal Website',
-                    titleES: 'Mi Sitio Personal',
+                    titleEN: '02. My Personal Website',
+                    titleES: '02. Mi Sitio Personal',
                         paragraphs: [
                         {
                             key: 1,

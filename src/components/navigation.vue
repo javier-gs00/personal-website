@@ -78,9 +78,9 @@ export default {
 @import (reference) '../assets/style/style.less';
 
 .nav-container {
-    .for-phone-only({
-        // display: none;
-    });
+    // .for-phone-and-tablet-portrait({
+
+    // });
     .for-tablet-landscape-up({
         top: 0px;
         width: 100%;
@@ -130,11 +130,12 @@ export default {
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         top: 0;
         right: 0;
         background-color: @primary-dark;
         overflow-x: hidden;
+        overflow-y: scroll;
         transition: 0.5s;
         padding-top: 60px;        
     });
