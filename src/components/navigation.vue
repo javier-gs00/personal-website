@@ -7,14 +7,15 @@
         </div>
         <div class="nav" id="nav">
             <a class="btn-close-nav" @click="closeNav">&times;</a>
-            <router-link v-for="navItem in navItems" :key="navItem.id" :to="navItem.to">
-                <span class="nav-text" @click="closeNav">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
-            </router-link> 
+            <a v-for="navItem in navItems" :key="navItem.id" :name="navItem.to" @click="goTo">
+                <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
+            </a> 
         </div>
     </div>
 </template>
 
 <script>
+import Router from '../router'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 
 export default {
@@ -60,6 +61,11 @@ export default {
     methods: {
         closeNav() {
             return document.getElementById('nav').style.width = "0"
+        },
+        goTo(e){
+            let to = e.currentTarget.name
+            document.getElementById('nav').style.width = "0"
+            return Router.push(to)
         }
     },
     components: {
@@ -173,6 +179,7 @@ export default {
     });
     .for-tablet-landscape-up({
         margin: 0 20px;
+        cursor: pointer;
     })
 }
 // .nav a {

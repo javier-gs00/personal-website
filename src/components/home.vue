@@ -43,7 +43,7 @@ export default {
         width: 100%;
         background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
                         url('../assets/img/santiago_landscape_1920x1080.jpg');
-        background-size: cover;        
+        background-size: cover;     
     });
     .for-tablet-portrait-up({
         // relative to nav-container height
@@ -137,7 +137,7 @@ export default {
     // });
     .for-phone-and-tablet-portrait({
         position: absolute;
-        z-index: -1;
+        z-index: 0;
         bottom: 10px;
         font-size: 15px;     
     });
