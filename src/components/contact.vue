@@ -81,12 +81,17 @@ export default {
     background: @accent;
 
     .for-phone-only({
-        margin: 30px 0;
-        height: 90%;
+        // margin-top: 60px;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column-reverse;
+        // justify-content: center;
+    });
+    .for-phone-and-tablet-portrait({
+        width: 100%;
         display: flex;
-        align-items: top;
+        flex-direction: column-reverse;
         justify-content: center;
-
     });
     .for-tablet-landscape-up({
         margin: 20px 0px;
@@ -108,19 +113,17 @@ export default {
     padding: 10px;
 
     .for-phone-only({
-        margin: 10px;
-        padding: 10px;
+        // padding: 10px 15px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
     });
-    // .for-tablet-portrait-up({
-    //     margin: 250px 50px;
-    //     padding: 20px 15px;
-    //     max-width: 500px;
-    // });
-    // .for-tablet-landscape-up({
-    //     margin: 250px 150px;
-    //     padding: 20px 15px;
-    //     max-width: 500px;
-    // });
+    .for-phone-and-tablet-portrait({
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    });    
     .for-tablet-landscape-up({
         margin: 10px 0 10px 50px;
         width: 400px;
@@ -139,15 +142,24 @@ export default {
 .contact-card h1 {
     color: @primary;
 
-    .for-phone-only({
-        margin: 0;
-        font-weight: 300;
+    .for-phone-and-tablet-portrait({
+        font-size: 24px;
     });
 }
 .contact-card p {
     color: @primary;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .contact-img {
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        height: 200px;
+        background-image: url('../assets/img/pexels-photo.jpg');
+        background-size: cover;
+    });
     .for-tablet-landscape-up({
         margin: 10px 50px 10px 0;
         padding: 10px;
@@ -165,9 +177,17 @@ export default {
 .social-media-contact span {
     color: @primary;
     margin: 10px 5px;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .social-media-contact a {
     color: @primary;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .linkedin {
     // color: #0084bf;

@@ -23,12 +23,27 @@ export default {
 @import (reference) '../assets/style/style.less';
 
 .home-container {
-    .for-phone-only({
-        margin-top: 0;
+    // .for-phone-only({
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: center;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
+    //                     url('../assets/img/santiago_landscape_1920x1080.jpg');
+    //     background-size: cover;
+    // });
+    .for-phone-and-tablet-portrait({
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
+                        url('../assets/img/santiago_landscape_1920x1080.jpg');
+        background-size: cover;        
     });
     .for-tablet-portrait-up({
         // relative to nav-container height
@@ -46,20 +61,37 @@ export default {
     });
 }
 .home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    position: fixed;
+    // .for-phone-only({
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: center;        
+    // });
+    .for-phone-and-tablet-portrait({
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;         
+    });
+    .for-tablet-portrait-up({
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: fixed;
+    });
 }
 .home-content h1 {
     font-size: 72px;
     font-weight: 300;
     margin: 0;
 
-    .for-phone-only({
-        font-size: 32px;
+    // .for-phone-only({
+    //     font-size: 32px;
+    // });
+    .for-phone-and-tablet-portrait({
+        font-size: 32px;        
     });
     /* background: -webkit-linear-gradient(#9c27b0, #03a9f4);
     background-clip: text;
@@ -69,8 +101,11 @@ export default {
 .home-content span {
     font-size: 40px;
 
-    .for-phone-only({
-        font-size: 20px;
+    // .for-phone-only({
+    //     font-size: 20px;
+    // });
+    .for-phone-and-tablet-portrait({
+        font-size: 20px;        
     });
 }
 .home-content .line {
@@ -94,11 +129,17 @@ export default {
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
 
-    .for-phone-only({
-        top: 10px;
-        right: 10px;
-        position: relative;
-        margin: 0px;
+    // .for-phone-only({
+    //     position: absolute;
+    //     z-index: -1;
+    //     bottom: 10px;
+    //     font-size: 15px;
+    // });
+    .for-phone-and-tablet-portrait({
+        position: absolute;
+        z-index: -1;
+        bottom: 10px;
+        font-size: 15px;     
     });
 
     .for-tablet-landscape-up({

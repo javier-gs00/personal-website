@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navigation :lang="lang"/>
+    <button class="btn-open-nav" @click="openNav"><span>&#9776;</span></button>
     <div class="main-container">
       <router-view :lang="lang" :changeLang="changeLang"/>
     </div>
@@ -24,6 +25,9 @@ export default {
       } else {
         return this.lang = 'english'
       }
+    },
+    openNav(){
+      document.getElementById('nav').style.width = "200px"
     }
   },
   components: {
@@ -66,17 +70,38 @@ a {
 #app {
   height: 100%;
 }
+.btn-open-nav {
+    display: inline;
+    float: right;
+    outline: none;
+    padding: 10px 10px;
+    background: transparent;
+    border: 0px;
+    font-size: 24px;
+    // .for-phone-only({
+    //     display: inline;
+    //     float: right;
+    //     outline: none;
+    //     padding: 10px 10px;
+    //     background: transparent;
+    //     border: 0px;
+    //     font-size: 24px;
+    // });
+    .for-tablet-landscape-up({
+        display: none;
+    })
+}
 .main-container {
-  position: fixed;
-  width: 100%;
   height: 100%;
-  display: flex;
-  // align-items: center;
-  justify-content: center;
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.4)),
-  //                         url('./assets/img/santiago_landscape_1920x1080.jpg');
-  // background-size: cover; 
-  // position: fixed;
-  // z-index: -1;
+  // .for-phone-only({
+  //   height: 100%;
+  // });
+  .for-tablet-landscape-up({
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  });
 }
 </style>

@@ -40,16 +40,18 @@ export default {
     background: @accent;
 
     .for-phone-only({
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        // margin-top: 60px;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column-reverse;
+        // justify-content: center;
     });
-    // .for-tablet-portrait-up({
-    //     margin: 250px 50px;
-    // });
-    // .for-tablet-landscape-up({
-    //     margin: 250px 150px;
-    // });
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;        
+    });
     .for-tablet-landscape-up({
         margin: 20px 0px;
         // width: 1200px;
@@ -70,17 +72,22 @@ export default {
 }
 .about {
     background: @accent;
-    padding: 10px;
 
     .for-phone-only({
-        margin: 10px;
-        padding: auto 15px;
+        // padding: 10px 15px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+    });
+    .for-phone-and-tablet-portrait({
+        padding: 10px 15px;
         display: flex;
         flex-direction: column;
         justify-content: center;
     });
     .for-tablet-landscape-up({
         margin: 10px 0 10px 50px;
+        padding: 10px;
         width: 400px;
         height: 400px;
     });
@@ -92,8 +99,8 @@ export default {
     margin: 20px 0;
     color: @primary;
 
-    .for-phone-only({
-        margin: 0;
+    .for-phone-and-tablet-portrait({
+        font-size: 24px;
     });
 }
 .about .about-line {
@@ -104,20 +111,39 @@ export default {
 }
 .about p {
     color: @primary;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .about a {
     color: @primary-light;
     cursor: pointer;
     text-decoration: underline;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .about-img {
+    .for-phone-only({
+        // width: 100%;
+        // height: 200px;
+        // background-image: url('../assets/img/pexels-photo.jpg');
+        // background-size: cover;
+    });
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        height: 200px;
+        background-image: url('../assets/img/pexels-photo.jpg');
+        background-size: cover;        
+    });
     .for-tablet-landscape-up({
         margin: 10px 50px 10px 0;
         padding: 10px;
         width: 400px;
         height: 400px;
         background-image: url('../assets/img/pexels-photo.jpg');
-
     });
     .for-desktop-up({
         margin: 10px 100px 10px 0;

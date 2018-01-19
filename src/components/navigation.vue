@@ -1,30 +1,16 @@
 <template>
     <div class="nav-container">
-        <button @click="showMenu">
-            <!-- <font-awesome-icon class="icon" :icon='["fas", menuButton]' /> -->
-            <span style="font-size: 24px;">&#9776;</span>
-            <span style="font-size: 32px;">&times;</span>
-        </button>
         <div class="logo-container">
             <router-link to="/home">
                 <span class="logo">JAVIER</span>
             </router-link>
         </div>
-        <div class="nav">
+        <div class="nav" id="nav">
+            <a class="btn-close-nav" @click="closeNav">&times;</a>
             <router-link v-for="navItem in navItems" :key="navItem.id" :to="navItem.to">
-                <!-- <font-awesome-icon :icon="['fas', navItem.icon]" /> -->
-                <!-- <font-awesome-icon class="icon" :icon="navItem.icon" /> -->
-                <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
+                <span class="nav-text" @click="closeNav">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
             </router-link> 
         </div>
-        <!-- <ul class="nav-bar">
-            <li v-for="navItem in navItems" :key="navItem.id" class="nav-item">
-                <router-link :to="navItem.to">
-                    <font-awesome-icon class="icon" :icon="navItem.icon" />
-                    <span class="nav-text">{{ lang === 'english'? navItem.nameEN : navItem.nameES }}</span>
-                </router-link> 
-            </li>
-        </ul> -->
     </div>
 </template>
 
@@ -39,6 +25,13 @@ export default {
     data() {
         return {
             navItems: [
+                {
+                    id: 0,
+                    nameEN: 'HOME',
+                    nameES: 'INICIO',
+                    to: '/home',
+                    icon: 'home'
+                },
                 {
                     id: 1,
                     nameEN: 'ABOUT',
@@ -65,14 +58,8 @@ export default {
         }
     },
     methods: {
-        showMenu() {
-            if (this.menuButton === 'bars') {
-                this.menuButton = 'times'
-                document.getElementById('nav-container').style.display = 'block'
-            } else {
-                this.menuButton = 'bars'
-                document.getElementById('nav-container').style.display = 'none'
-            }
+        closeNav() {
+            return document.getElementById('nav').style.width = "0"
         }
     },
     components: {
@@ -86,14 +73,8 @@ export default {
 
 .nav-container {
     .for-phone-only({
-        display: block;
-        background: @primary-light;
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        overflow: auto;
+        // display: none;
     });
-
     .for-tablet-landscape-up({
         top: 0px;
         width: 100%;
@@ -104,38 +85,53 @@ export default {
         z-index: 1;
     });    
 }
-.nav-container button {
+.logo-container {
+    display: none;
     .for-phone-only({
-        outline: none;
-        margin: 15px 30px 10px;
-        padding: 0;
-        background: transparent;
-        border-width: 0;
-        font-size: 20px;
+        // display: none;
+        // display: inline;
+        // padding: 10px;
     });
     .for-tablet-landscape-up({
-        display: none;
-    })
-}
-.nav-container .logo-container {
-    margin: 5px 30px;
-
-    .for-tablet-landscape-up({
+        display: inline;
+        margin: 5px 30px;
         margin: 10px 0 10px 30px;
         flex: .2;
     })
 }
 .logo {
+    .for-phone-only({
+        font-size: 24px;
+    });
     .for-tablet-landscape-up({
         font-size: 30px;
     })
 }
-.nav-container .nav {
+.nav {
     .for-phone-only({
-        display: flex;
-        flex-direction: column;
+        // height: 100%;
+        // width: 0;
+        // position: fixed;
+        // z-index: 1;
+        // top: 0;
+        // right: 0;
+        // background-color: @primary-dark;
+        // overflow-x: hidden;
+        // transition: 0.5s;
+        // padding-top: 60px;
     });
-
+    .for-phone-and-tablet-portrait({
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: @primary-dark;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;        
+    });
     .for-tablet-landscape-up({
         flex: .8;
         margin: 10px 10px 10px 0;
@@ -144,18 +140,53 @@ export default {
         align-items: center;
     })
 }
+.btn-close-nav {
+    .for-phone-and-tablet-portrait({
+        position: absolute;
+        top: 0;
+        right: 0px;
+        padding: 10px;
+        font-size: 36px;
+        // margin-top: 0px;
+        // margin-left: 50px;
+    });
+    .for-tablet-landscape-up({
+        display: none;
+    });
+}
 .nav a {
-    // color: @primary-dark;
     color: @accent-light;
     margin: 5px 0px;
-
+    .for-phone-only({
+        // padding: 8px 8px 8px 32px;
+        // text-decoration: none;
+        // font-size: 25px;
+        // display: block;
+        // transition: 0.3s;
+    });
+    .for-phone-and-tablet-portrait({
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        display: block;
+        transition: 0.3s;        
+    });
     .for-tablet-landscape-up({
         margin: 0 20px;
     })
 }
+// .nav a {
+//     .for-phone-only({
+//         position: absolute;
+//         top: 0;
+//         right: 0px;
+//         padding: 10px;
+//         font-size: 36px;
+//     });
+// }
 .nav-text {
     .for-phone-only({
-        display: none;
+        // display: none;
     });
     .for-tablet-landscape-up({
         // display: inline;

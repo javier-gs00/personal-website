@@ -2,6 +2,10 @@
     <div class="work-container">
         <button @click="prevActiveProjectId" class="btn-project">&#8249;</button>
         <div class="project">
+            <div class="mobile-btns-container">
+                <button @click="prevActiveProjectId" class="btn-project-mobile btn-prev">&#8249;</button>
+                <button @click="nextActiveProjectId" class="btn-project-mobile btn-next">&#8250;</button>
+            </div>
             <div class="project-content">
                 <div class="project-line"></div>
                 <h1>{{ lang === 'english' ? projects[activeProjectId].titleEN : projects[activeProjectId].titleES }}</h1>
@@ -157,16 +161,13 @@ export default {
 
 .work-container {
     background: @accent;
-    .for-phone-only({
-        margin: 10px 10px 65px 10px;
-        overflow-y: hidden;
+    .for-phone-and-tablet-portrait({
+        // margin-top: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     });
-    // .for-tablet-portrait-up({
-    //     margin: 150px 50px;
-    // });
-    // .for-tablet-landscape-up({
-    //     margin: 250px 150px;
-    // });
     .for-tablet-landscape-up({
         margin: 20px 0px;
         width: 100%;
@@ -188,24 +189,32 @@ export default {
     font-weight: 300;
     color: @primary;
 
-    .for-phone-only({
-        margin: 0;
-        font-weight: 300;
+    .for-phone-and-tablet-portrait({
+        font-size: 24px;
     });
 }
 .work-container p {
     margin-bottom: 0;
     color: @primary;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .work-container a {
     text-decoration: underline;
     color: @primary-light;
+
+    .for-phone-and-tablet-portrait({
+        font-size: 15px;
+    });
 }
 .project {
-    .for-phone-only({
-        padding: 10px;
-        margin: 0 auto 20px;
-        margin: 0 0 10px 0;
+    .for-phone-and-tablet-portrait({
+        // padding: 10px 15px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
     });
     .for-tablet-landscape-up({
         display: flex;
@@ -216,7 +225,12 @@ export default {
 }
 .project-content {
     padding: 10px;
-
+    .for-phone-and-tablet-portrait({
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    });
     .for-tablet-landscape-up({
         margin: 10px 0 10px 50px;
         width: 400px;
@@ -245,10 +259,24 @@ export default {
     });
 }
 .project-pets-img {
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                    url('../assets/img/doggy1.jpg');
+    });
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                         url('../assets/img/doggy1.jpg');
 }
 .personal-website-img {
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                    url('../assets/img/minimalist-desk-setup.jpg');
+    });
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                         url('../assets/img/minimalist-desk-setup.jpg');
 }
@@ -263,6 +291,9 @@ export default {
     outline: none;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
+    .for-phone-and-tablet-portrait({
+        display: none;
+    });
     .for-tablet-landscape-up({
         font-size: 20px;
         border-width: 0px;
@@ -276,6 +307,36 @@ export default {
     .for-desktop-up({
         background: @primary;
         color: @accent;
+    });
+}
+.mobile-btns-container {
+    padding: 10px 15px;
+    display: inline;
+
+    .for-tablet-landscape-up({
+        display: none;
+    });
+}
+.mobile-btns-container .btn-project-mobile {
+    .for-phone-and-tablet-portrait({
+        color: @accent;
+        background-color: @primary-dark;
+        border: 2px solid @primary-dark;
+        font-size: 15px;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+    });
+}
+.btn-next {
+    .for-phone-and-tablet-portrait({
+        float: right;
+    });
+}
+.btn-prev {
+    .for-phone-and-tablet-portrait({
+        float: left;
     });
 }
 .technologies {
