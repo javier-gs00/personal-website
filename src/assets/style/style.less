@@ -1,68 +1,46 @@
 // Primary colors
-
-// @primary: #fafafa;
-// @primary-light: #ffffff;
-// @primary-dark: #c7c7c7;
-
 @primary: #212121;
 @primary-light: #484848;
 @primary-dark: #000000;
 
 // Accent colors
-
 @accent: #fafafa;
 @accent-light: #ffffff;
 @accent-dark: #c7c7c7;
 
-// @accent: #212121;
-// @accent-light: #484848;
-// @accent-dark: #000000;
-
 // Responsive media rulesets
-
 .for-phone-only(@content) {
     @media only screen and (max-width: 599px) {
         @content();
     }
 }
-
 .for-phone-and-tablet-portrait(@content) {
     @media only screen and (max-width: 899px) {
         @content();
     }
 }
-
 .for-tablet-portrait-only(@content) {
     @media only screen and (min-width: 600px) and (max-width: 899px) {
         @content();
     }
 }
-
 .for-tablet-portrait-up (@content) {
     @media only screen and (min-width: 600px) {
         @content();
     }
 }
-
 .for-tablet-landscape-up (@content) {
     @media only screen and (min-width: 900px) {
         @content();
     }
 }
-
 .for-desktop-up (@content) {
     @media only screen and (min-width: 1200px) {
         @content();
     }
 }
-
 .for-big-desktop-up (@content) {
     @media only screen and (min-width: 1800px) {
         @content();
     }
 }
-
-// .for-phone-only({});
-// .for-tablet-portrait-up({});
-// .for-tablet-landscape-up({});
-// .for-desktop-up({});

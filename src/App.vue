@@ -3,7 +3,9 @@
     <Navigation :lang="lang"/>
     <button class="btn-open-nav" @click="openNav"><span>&#9776;</span></button>
     <div class="main-container">
-      <router-view :lang="lang" :changeLang="changeLang"/>
+      <transition name="fade" mode="out-in">
+        <router-view :lang="lang" :changeLang="changeLang"/>
+      </transition>
     </div>
   </div>
 </template>
@@ -20,13 +22,11 @@ export default {
   },
   methods: {
     changeLang() {
-      if(this.lang === 'english') {
-        return this.lang = 'spanish'
-      } else {
-        return this.lang = 'english'
-      }
+      return this.lang === 'english' 
+        ? this.lang = 'spanish'
+        : this.lang = 'english'
     },
-    openNav(){
+    openNav() {
       document.getElementById('nav').style.width = "170px"
     }
   },
@@ -57,8 +57,13 @@ h1 {
 }
 a, p, span, input {
   font-family: 'Muli', sans-serif;
-  font-size: 20px;
   color: @accent-light;
+}
+span {
+  font-size: 20px;
+}
+p {
+  font-size: 18px; 
 }
 a {
   text-decoration: none;
@@ -73,34 +78,41 @@ a {
 .btn-open-nav {
     position: fixed;
     z-index: 1;
-    // text-align: right;
-    // display: inline;
-    // float: right;
     right: 0px;
     outline: none;
     padding: 10px 10px;
+    margin: 0;
     background: transparent;
     border: 0px;
     font-size: 24px;
-
-    .for-tablet-landscape-up({
-        display: none;
-    })
+    .for-tablet-landscape-up({ display: none; })
 }
 .main-container {
   height: 100%;
-  // .for-phone-only({
-  //   height: 100%;
-  // });
-  .for-phone-and-tablet-portrait({
-    // position: fixed;
-  });
   .for-tablet-landscape-up({
     position: fixed;
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
+  });
+}
+.fade-enter-active, .fade-leave-active {
+  .for-phone-and-tablet-portrait({
+    transition-property: opacity;
+    transition-duration: .2s;
+    transition-timing-function: ease;
+  });
+}
+
+.fade-enter-active {
+  .for-phone-and-tablet-portrait({
+    transition-delay: .1s;
+  });
+}
+
+.fade-enter, .fade-leave-active {
+  .for-phone-and-tablet-portrait({
+    opacity: 0
   });
 }
 </style>

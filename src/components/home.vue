@@ -23,17 +23,6 @@ export default {
 @import (reference) '../assets/style/style.less';
 
 .home-container {
-    // .for-phone-only({
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     height: 100%;
-    //     width: 100%;
-    //     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
-    //                     url('../assets/img/santiago_landscape_1920x1080.jpg');
-    //     background-size: cover;
-    // });
     .for-phone-and-tablet-portrait({
         display: flex;
         flex-direction: column;
@@ -41,11 +30,10 @@ export default {
         justify-content: center;
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
                         url('../assets/img/santiago_landscape_1920x1080_portrait.jpg');
         background-size: cover;
-        position: fixed;
-        // z-index: -1;     
+        position: fixed; 
     });
     .for-tablet-landscape-up({
         // relative to nav-container height
@@ -55,27 +43,18 @@ export default {
         justify-content: center;
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.99), rgba(0, 0, 0, 0.4)),
+        background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
                                 url('../assets/img/santiago_landscape_1920x1080.jpg');
         background-size: cover; 
         position: fixed;
-        // z-index: -1;
     });
 }
 .home-content {
-    // .for-phone-only({
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;        
-    // });
     .for-phone-and-tablet-portrait({
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        // height: 100%;
-        // position: fixed;         
+        justify-content: center;       
     });
     .for-tablet-portrait-up({
         display: flex;
@@ -90,27 +69,11 @@ export default {
     font-size: 72px;
     font-weight: 300;
     margin: 0;
-
-    // .for-phone-only({
-    //     font-size: 32px;
-    // });
-    .for-phone-only({
-        font-size: 32px;        
-    });
-    /* background: -webkit-linear-gradient(#9c27b0, #03a9f4);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+    .for-phone-only({ font-size: 32px; });
 }
 .home-content span {
     font-size: 40px;
-
-    // .for-phone-only({
-    //     font-size: 20px;
-    // });
-    .for-phone-only({
-        font-size: 20px;        
-    });
+    .for-phone-only({ font-size: 20px; });
 }
 .home-content .line {
     height: 1px;
@@ -121,9 +84,6 @@ export default {
 .home-content button {
     background: transparent;
     color: @accent;
-    // border-width: 1px;
-    // border-color: @accent;
-    // border-style: solid;
     border: 1px solid @accent;
     border-radius: 2px;
     padding: 5px 15px;
@@ -132,25 +92,14 @@ export default {
     outline: none;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
-
-    // .for-phone-only({
-    //     position: absolute;
-    //     z-index: -1;
-    //     bottom: 10px;
-    //     font-size: 15px;
-    // });
     .for-phone-and-tablet-portrait({
         position: absolute;
-        // z-index: 1;
         bottom: 10px;
         font-size: 15px;     
     });
-
     .for-tablet-landscape-up({
         position: absolute;
-        // z-index: 3;
         bottom: 10px;
-        // right: 10px;
         padding: 5px 15px;
         font-size: 15px;
         margin: 0px;
@@ -160,7 +109,6 @@ export default {
 .home-content button:hover {
     color: @accent;
     background: transparent;
-
     .for-desktop-up({
         color: @primary;
         background: @accent;

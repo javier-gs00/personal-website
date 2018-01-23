@@ -14,14 +14,6 @@
                     <a v-if="paragraph.url" :href="paragraph.url" target="blank">{{lang === 'english' ? 'here' : 'acá'}}</a>
                     <a v-if="paragraph.url" :href="paragraph.url" target="blank"><font-awesome-icon :icon="['fas', 'external-link-alt']" size="xs"/></a>
                 </p>
-                <!-- <div class="technologies">
-                    <span v-for="technology in project.technologiesUsed" :key="technology.key" :class="technology.class">                  
-                    <font-awesome-icon v-if="technology.icon" :icon="['fab', technology.icon]" :size="technology.size" />
-                    {{ technology.text }}
-                    <MongoDbSvg v-if="technology.mongo" />
-                    <img v-if="technology.img === 'vue'" src="../assets/logo.png" />
-                    </span>
-                </div> -->
             </div>
             <div class="project-img" :class="projects[activeProjectId].imageClass"></div>
         </div>
@@ -31,7 +23,7 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import MongoDbSvg from '../assets/mongodb'
+// import MongoDbSvg from '../assets/mongodb'
 
 export default {
     name: "work",
@@ -50,48 +42,25 @@ export default {
                     titleES: '01. Pets Bazaar',
                     paragraphs: [
                         {
-                            key: 1,
-                            textEN: 'The focus of this project is to help pet owners find the products that better fit their needs, as well as providing an easier way to locate pet clinics and stores.',
-                            textES: 'El propósito de este proyecto es ayudar a los dueños de mascotas encontrar los productos de mascotas que mejor se ajusten a su situación, como tambien proveer una forma fácil de encontrar veterinarias y tiendas para mascotas.'
+                            key: 0,
+                            textEN: 'This website purpose is to help pet owners find and compare the products sold by different pet shops in just one place. They can also look for the locations, contact informaction and much more for each veterinarian clinic and pet shop registered in the website.',
+                            textES: 'El propósito de este sitio web es presentar a los dueños de mascotas, en un sólo lugar, los productos vendidos por cada veterinaria y tienda de mascotas. También podrán revisar la ubicación, información de contacto y mucho más de cada una de las tiendas registradas.'
                         },
                         {
-                            key: 2,
-                            textEN: 'Did I peek your interest? You can check the progress of this project ',
-                            textES: '¿Te interesa saber más? Puedes ver el avance de este proyecto ',
+                            key: 1,
+                            textEN: 'View this website ',
+                            textES: 'Ver el sitio web ',
                             url: 'https://project-pets-client.herokuapp.com',
                         },
                         {
-                            key: 3,
-                            textEN: 'Main technologies used...',
-                            textES: 'Principales tecnologias usadas...'
-                        }
-                    ],
-                    technologiesUsed: [
-                        {
-                            key: 1,
-                            class: 'react',
-                            icon: 'react',
-                            size: '2x'
+                            key: 2,
+                            textEN: 'Technologies used: ReactJS, ExpressJS, Nodejs and MongoDB.',
+                            textES: 'Tecnologias usadas: ReactJS, ExpressJS, Nodejs and MongoDB.'
                         },
-                        // {
-                        //     key: 2,
-                        //     class: 'react react-text',
-                        //     text: 'React'
-                        // },
                         {
                             key: 3,
-                            class: 'express',
-                            text: 'Express'
-                        },
-                        {
-                            key: 4,
-                            class: 'nodejs',
-                            icon: 'node-js',
-                            size: '2x'
-                        },
-                        {
-                            key: 5,
-                            mongo: true
+                            textEN: 'Photo: My dog Scotty and inspiration for this app.',
+                            textES: 'Foto: My perro Scotty e inspiración para esta app.'
                         }
                     ],
                     imageClass: 'project-pets-img'
@@ -102,28 +71,17 @@ export default {
                     titleES: '02. Mi Sitio Personal',
                         paragraphs: [
                         {
-                            key: 1,
-                            textEN: "This is my own canvas, where I'll be trying out new things often just for the fun of it. ",
-                            textES: 'Este es mi propio lienzo, donde estaré probando nuevas cosas en forma constante sólo porque puedo.'
+                            key: 0,
+                            textEN: "This is the first version of my website, which I will be updating constantly. This version was made using VueJS to learn about this new framwork, which so far I really like.",
+                            textES: 'Está es la primera versión de mi sitio web, el que estaré actualizando constantemente. Esta versión fue hecha usando VueJS para aprender de esta nueva framework, la que hasta el momento me han gustado bastante.'
                         },
                         {
-                            key: 2,
-                            textEN: 'This website was made using Vue.js. You can learn more about this javascript framerwork from ',
-                            textES: 'El sitio fue hecho usando Vue.js. Puedes aprender más sobre este framework para javascript ',
-                            url: 'https://vuejs.org',
-                        },
-                        {
-                            key: 3,
-                            textEN: 'Main technologies used...',
-                            textES: 'Principales tecnologias usadas...'
-                        }
-                    ],
-                    technologiesUsed: [
-                        {
                             key: 1,
-                            class: 'vue',
-                            img: 'vue',
+                            textEN: 'In case something caught your eye or just for mere curiosity, the source code can be found on my github account ',
+                            textES: 'Si te gustó algo del sitio o sólo por curiosidad, puedes revisar el código fuente en mi cuenta de github ',
+                            url: 'https://github.com/javier-gs00/personal-website',
                         }
+
                     ],
                     imageClass: 'personal-website-img'
                 }
@@ -151,7 +109,7 @@ export default {
     },
     components: {
         FontAwesomeIcon,
-        MongoDbSvg
+        // MongoDbSvg
     }
 }
 </script>
@@ -161,12 +119,19 @@ export default {
 
 .work-container {
     background: @accent;
-    .for-phone-and-tablet-portrait({
+    .for-phone-only({
         // margin-top: 60px;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    });
+    .for-tablet-portrait-only({
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;       
     });
     .for-tablet-landscape-up({
         margin: 20px 0px;
@@ -196,22 +161,17 @@ export default {
 .work-container p {
     margin-bottom: 0;
     color: @primary;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 15px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 15px; });
+    .for-tablet-landscape-up({ font-size: 15px; });
+    .for-desktop-up({ font-size: 18px; });
 }
 .work-container a {
     text-decoration: underline;
     color: @primary-light;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 15px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 15px; });
 }
 .project {
     .for-phone-and-tablet-portrait({
-        // padding: 10px 15px;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -262,10 +222,8 @@ export default {
     });
 }
 .project-pets-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                        url('../assets/img/doggy1.jpg');
     background-size: cover;
-
+    background-image: url('../assets/img/project-pets-scotty.jpg');
     .for-phone-and-tablet-portrait({
         width: 100%;
         height: 200px;
@@ -274,18 +232,11 @@ export default {
         width: 100%;
         height: 400px;   
     });
-    // .for-tablet-portrait-up({
-    //     height: 400px;
-    // });
-    // .for-tablet-landscape-up({
-    //     height: 400px;
-    // });
 }
 .personal-website-img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                        url('../assets/img/minimalist-desk-setup.jpg');
     background-size: cover;
-
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                        url('../assets/img/my-desk-setup-mobile.jpg');
     .for-phone-only({
         width: 100%;
         height: 200px;
@@ -294,27 +245,21 @@ export default {
         width: 100%;
         height: 400px;   
     });
-    // .for-tablet-portrait-up({
-    //     height: 400px;        
-    // });
-    // .for-tablet-landscape-up({
-    //     height: auto;
-    // });
+    .for-tablet-landscape-up({
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                        url('../assets/img/my-desk-setup.jpg');
+    });
 }
 .btn-project {
     background: transparent;
     color: @primary;
-    // border-width: 1px;
     border-color: transparent;
     border-style: solid;
-    border-radius: 2px;
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
     -webkit-transition: all 0.2s ease;
-    .for-phone-and-tablet-portrait({
-        display: none;
-    });
+    .for-phone-and-tablet-portrait({ display: none; });
     .for-tablet-landscape-up({
         font-size: 20px;
         border-width: 0px;
@@ -338,9 +283,7 @@ export default {
     .for-tablet-portrait-up({
         padding: 10px 100px 50px;
     });
-    .for-tablet-landscape-up({
-        display: none;
-    });
+    .for-tablet-landscape-up({ display: none; });
 }
 .mobile-btns-container .btn-project-mobile {
     .for-phone-and-tablet-portrait({
@@ -355,68 +298,9 @@ export default {
     });
 }
 .btn-next {
-    .for-phone-and-tablet-portrait({
-        float: right;
-    });
+    .for-phone-and-tablet-portrait({ float: right; });
 }
 .btn-prev {
-    .for-phone-and-tablet-portrait({
-        float: left;
-    });
-}
-.technologies {
-    .for-phone-only({
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 10px 0 5px 0;
-    });
-    .for-desktop-up({
-        margin: 10px 0 10px 0;
-        // padding: 10px;
-        // width: 400px;
-        // height: 400px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-start;
-    });
-}
-.technologies span {
-    margin: 5px 10px;
-}
-span.react {
-    color: #61dafb;
-    margin-inline-end: 2px;
-}
-span.react::after {
-    margin-inline-start: 2px;
-    font-weight: 700;
-    content: 'React';
-}
-// span.react-text {
-//     margin-inline-start: 2px;
-//     font-weight: 700;
-
-//     .for-phone-only({
-//         display: none;
-//     });
-// }
-.express {
-    font: 25px "Helvetica Neue","Open Sans",sans-serif;
-    font-weight: 100;
-    background: #fff;
-    color: rgb(80, 80, 80);
-    border-radius: 2px;
-    padding: 0 5px;
-}
-.nodejs {
-    /* https://nodejs.org/static/documents/foundation-visual-guidelines.pdf */
-    /* color: #026e00; */
-    color: #339933;
-}
-span.vue img {
-    height: 48px;
+    .for-phone-and-tablet-portrait({ float: left; });
 }
 </style>

@@ -79,19 +79,18 @@ export default {
 
 .contact-container {
     background: @accent;
-
     .for-phone-only({
-        // margin-top: 60px;
-        // width: 100%;
-        // display: flex;
-        // flex-direction: column-reverse;
-        // justify-content: center;
-    });
-    .for-phone-and-tablet-portrait({
         width: 100%;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
+    });
+    .for-tablet-portrait-only({
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;       
     });
     .for-tablet-landscape-up({
         margin: 20px 0px;
@@ -111,7 +110,6 @@ export default {
 }
 .contact-card {
     padding: 10px;
-
     .for-phone-only({
         padding: 10px 15px;
         display: flex;
@@ -138,29 +136,22 @@ export default {
 }
 .contact-card h1 {
     color: @primary;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 24px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 24px; });
 }
 .contact-card p {
     color: @primary;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 15px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 15px; });
 }
 .contact-img {
+background-image: url('../assets/img/pen-and-coffee.jpg');
     .for-phone-only({
         width: 100%;
         height: 200px;
-        background-image: url('../assets/img/pexels-photo.jpg');
         background-size: cover;
     });
     .for-tablet-portrait-up({
         width: 100%;
         height: 400px;
-        background-image: url('../assets/img/pexels-photo.jpg');
         background-size: cover;
     });
     .for-tablet-landscape-up({
@@ -168,8 +159,6 @@ export default {
         padding: 10px;
         width: 400px;
         height: 400px;
-        background-image: url('../assets/img/pexels-photo.jpg');
-        background-size: cover;
     });
     .for-desktop-up({
         margin: 10px 100px 10px 0;
@@ -181,24 +170,14 @@ export default {
 .social-media-contact span {
     color: @primary;
     margin: 10px 5px;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 15px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 15px; });
 }
 .social-media-contact a {
     color: @primary;
-
-    .for-phone-and-tablet-portrait({
-        font-size: 15px;
-    });
+    .for-phone-and-tablet-portrait({ font-size: 15px; });
 }
 .linkedin {
     // color: #0084bf;
     color: #fff;
-    // background: #0084bf;
-    // padding: 1px 3px;
-    // border-radius: 2px;
-    // height: 20px;
 }
 </style>
