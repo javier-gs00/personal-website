@@ -2,13 +2,13 @@
     <div class="about-container">
         <div class="about">
             <div class="about-line"></div>
-            <h1>{{ lang === 'english' ? 'A little bit about me...' : 'Un poco acerca de mí...' }}</h1>
+            <h1>{{ lang === 'english' ? 'A little bit about me...' : 'Acerca de mí...' }}</h1>
             <p>{{ lang === 'english' 
                 ? 'I am a web developer and industrial engineer from Santigo, Chile.'
                 : 'Soy un desarrollador web e ingeniero industrial ubicado en Santiago de Chile.' }}</p>
             <p>{{ lang === 'english' 
-                ? "I love technology, learning about new things and optimizing processes. Having taken part in multiple technology projects, I use my skills to create useful and fast websites for the current generation of users."
-                : 'Me encanta la tecnología, aprender nuevas cosas y optimizar procesos. Habiendo participado en distintos proyectos tecnológicos, uso mis habilidades para crear sitios webs rápidos y útiles para esta generación de usuarios.' }}</p>
+                ? "I love technology, learning about new things and optimizing processes. Having taken part in multiple technology projects, I enjoy using my skills to create useful and fast websites and applications."
+                : 'Me encanta la tecnología, aprender sobre nuevas cosas y optimizar procesos. Habiendo participado en distintos proyectos tecnológicos, uso mis habilidades para crear sitios webs y apliciones rápidas y útiles.' }}</p>
         </div>
         <div class="about-img"></div>
     </div>

@@ -54,8 +54,8 @@ export default {
                         },
                         {
                             key: 2,
-                            textEN: 'Technologies used: ReactJS, ExpressJS, Nodejs and MongoDB.',
-                            textES: 'Tecnologias usadas: ReactJS, ExpressJS, Nodejs and MongoDB.'
+                            textEN: 'Technologies used: Reactjs, Redux, Expressjs, Nodejs and MongoDB.',
+                            textES: 'Tecnologias usadas: Reactjs, Redux, Expressjs, Nodejs and MongoDB.'
                         },
                         {
                             key: 3,
@@ -72,8 +72,8 @@ export default {
                         paragraphs: [
                         {
                             key: 0,
-                            textEN: "This is the first version of my website, which I will be updating constantly. This version was made using VueJS to learn about this new framwork, which so far I really like.",
-                            textES: 'Está es la primera versión de mi sitio web, el que estaré actualizando constantemente. Esta versión fue hecha usando VueJS para aprender de esta nueva framework, la que hasta el momento me han gustado bastante.'
+                            textEN: "This is the first version of my website, which I will be updating constantly. This version was made using Vuejs to learn about this new framwork, which so far I really like.",
+                            textES: 'Está es la primera versión de mi sitio web, el que estaré actualizando constantemente. Esta versión fue hecha usando Vuejs para aprender de esta nueva framework, la que hasta el momento me han gustado bastante.'
                         },
                         {
                             key: 1,

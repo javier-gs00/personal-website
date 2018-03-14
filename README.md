@@ -1,21 +1,8 @@
-# personal-website
+# My Personal Website
 
-> Personal website developed using Vue.js
+This is the code for my personal website. It's made using Vue.js.
+Yes, it is totally overkill, but why not? :)
 
-## Build Setup
+The live version can be viewed using the following link.
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+> https://javiergutierrez.info

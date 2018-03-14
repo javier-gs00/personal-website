@@ -11,21 +11,6 @@
                 <span><a :href="contact.link" class="contact-text" target="blank">{{ contact.text }}</a>
                         <a :href="contact.link" target="blank"><font-awesome-icon :icon="['fas', 'external-link-alt']" size="xs"/></a></span>
             </div>
-            <!-- <div class="social-media-contact">
-                <span><font-awesome-icon :icon='["fab", "github"]'/></span>
-                <span>In Github as javier-gs00</span>
-                <span><a href="https://github.com/javier-gs00" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></span>
-            </div>
-            <div class="social-media-contact">
-                <span><font-awesome-icon :icon='["fab", "codepen"]'/></span>
-                <span>In CODEPEN as javier-gs00</span>
-                <span><a href="https://codepen.io/javier-gs00/" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></span>
-            </div>
-            <div class="social-media-contact">
-                <span class="linkedin"><font-awesome-icon :icon='["fab", "linkedin"]'/></span>
-                <span>In LinkedIn as Javier Gutiérrez</span>
-                <span><a href="https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/" target="blank"><font-awesome-icon :icon='["fas", "external-link-alt"]' size="xs"/></a></span>
-            </div> -->
         </div>
         <div class="contact-img"></div>
     </div>
@@ -33,8 +18,6 @@
 
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-// import brands from '@fortawesome/fontawesome-free-brands'
-// import { linkedin, github, codepen } from '@fortawesome/fontawesome-free-brands'
 
 export default {
     name: "contact",
@@ -53,17 +36,17 @@ export default {
                 },
                 {
                     id: 2,
-                    logo: 'codepen',
-                    text: 'CODEPEN',
-                    link: "https://codepen.io/javier-gs00/"
-                },
-                {
-                    id: 3,
                     logo: 'linkedin-in',
                     text: 'LinkedIn',
                     link: "https://www.linkedin.com/in/javier-gutierrez-sepulveda-66bb9835/",
                     class: 'linkedin'
                 },
+                // {
+                //     id: 3,
+                //     logo: 'codepen',
+                //     text: 'CODEPEN',
+                //     link: "https://codepen.io/javier-gs00/"
+                // }
             ]
         }
     },

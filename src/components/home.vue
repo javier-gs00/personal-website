@@ -4,7 +4,7 @@
             <h1>Javier Gutiérrez</h1>
             <div class="line"></div>
             <span>{{ lang === 'english' ? 'Web Developer' : 'Desarrollador Web' }}</span>
-            <button @click="changeLang">{{ lang === 'english' ? 'ENGLISH' : 'ESPAÑOL' }}</button>
+            <button @click="changeLang">{{ lang === 'english' ? 'CAMBIAR A ESPAÑOL' : 'CHANGE TO ENGLISH' }}</button>
         </div>
     </div>
 </template>
