@@ -34,7 +34,6 @@ export default {
         return {
             // Set the first project that will be shown here
             activeProjectId: 0,
-            projectQuantity: this.countActiveProjects, 
             projects: [
                 {
                     id: 0,
@@ -67,8 +66,33 @@ export default {
                 },
                 {
                     id: 1,
-                    titleEN: '02. My Personal Website',
-                    titleES: '02. Mi Sitio Personal',
+                    titleEN: '02. GitHub Profile Inspector',
+                    titleES: '02. GitHub Profile Inspector',
+                        paragraphs: [
+                        {
+                            key: 0,
+                            textEN: "Website made for searching and looking for GitHub users stats in a fast and easy way.",
+                            textES: 'Sitio web hecho para buscar y revisar, rapida y facilmente, los perfiles de los usuarios de GitHub.'
+                        },
+                        {
+                            key: 1,
+                            textEN: 'The website can be found ',
+                            textES: 'El sitio se puede ver ',
+                            url: 'https://github-profile-inspector.firebaseapp.com',
+                        },
+                        {
+                            key: 2,
+                            textEN: 'Technologies used: Reactjs, Redux and the GitHub API v3.',
+                            textES: 'Tecnologias usadas: Reactjs, Redux and the GitHub API v3'
+                        }
+
+                    ],
+                    imageClass: 'github-profile-inspector-img'
+                },
+                {
+                    id: 2,
+                    titleEN: '03. My Personal Website',
+                    titleES: '03. Mi Sitio Personal',
                         paragraphs: [
                         {
                             key: 0,
@@ -88,22 +112,17 @@ export default {
             ]
         }
     },
-    computed: {
-        countActiveProjects() {
-            return this.projects.length - 1
-        }
-    },
     methods: {
         nextActiveProjectId() {
             // Check if it's the last project or not
-            return this.activeProjectId == this.countActiveProjects 
+            return this.activeProjectId == this.projects.length - 1
                 ? this.activeProjectId = 0
                 : this.activeProjectId++
         },
         prevActiveProjectId() {
             // Check if it's the first project or not
             return this.activeProjectId == 0 
-                ? this.activeProjectId = this.countActiveProjects 
+                ? this.activeProjectId = this.projects.length - 1
                 : this.activeProjectId--
         }
     },
@@ -231,6 +250,22 @@ export default {
     .for-tablet-portrait-only({
         width: 100%;
         height: 400px;   
+    });
+}
+.github-profile-inspector-img {
+    background-size: cover;
+    background-image: url('../assets/img/github-profile-inspector-mobile.png');
+    .for-phone-and-tablet-portrait({
+        width: 100%;
+        height: 200px;
+    });
+    .for-tablet-portrait-only({
+        width: 100%;
+        height: 400px;   
+    });
+    .for-tablet-landscape-up({
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                        url('../assets/img/github-profile-inspector.png');
     });
 }
 .personal-website-img {

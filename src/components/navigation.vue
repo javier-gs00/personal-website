@@ -124,13 +124,13 @@ export default {
     });
     .for-tablet-landscape-up({ display: none; });
 }
-.nav a {
-    color: @accent-light;
+.nav a span {
+    color: @accent-dark;
     margin: 5px 0px;
     .for-phone-and-tablet-portrait({
+        color: @accent-light;
         padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
+        font-size: 18px;
         display: block;
         transition: 0.3s;
     });
@@ -139,14 +139,16 @@ export default {
         cursor: pointer;
     })
 }
-.nav a:hover {
+.nav a:hover span {
     .for-tablet-landscape-up({
-        color: @primary-dark;
+        color: @accent-light;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
     });
-    .for-desktop-up({
-        font-weight: 600;
-        transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-    });
+    // .for-desktop-up({
+    //     color: @accent-light;
+    //     transition: all 0.3s ease;
+    //     -webkit-transition: all 0.3s ease;
+    // });
 }
 </style>
