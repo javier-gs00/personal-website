@@ -5,6 +5,7 @@
             <div class="line"></div>
             <span>{{ lang === 'english' ? 'Web Developer' : 'Desarrollador Web' }}</span>
             <button @click="changeLang">{{ lang === 'english' ? 'CAMBIAR A ESPAÑOL' : 'CHANGE TO ENGLISH' }}</button>
+            <span class="dns-disclaimer">{{ lang === 'english' ? 'Currently in the process of changing the domain name and provider' : 'Actualmente en proceso de cambio de nombre de dominio y proveedor' }}</span>
         </div>
     </div>
 </template>
@@ -113,5 +114,10 @@ export default {
         color: @primary;
         background: @accent;
     });
+}
+.home-content .dns-disclaimer {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 5px 0 5px;
 }
 </style>
