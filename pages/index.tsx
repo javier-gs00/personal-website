@@ -2,17 +2,17 @@ import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Navbar } from '../components/navbar/Navbar'
+import { Layout } from '../components/layout/Layout'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <Navbar />
         <h1 className={styles.title}>Javier</h1>
 
         <p className={styles.description}>
@@ -24,17 +24,6 @@ export default function Home() {
           Feel free to look take a look around.
         </p>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    </Layout>
   )
 }

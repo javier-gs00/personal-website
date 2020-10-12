@@ -6,8 +6,6 @@ import { NavLink } from './NavLink'
 export const Navbar: React.FC = () => {
   const router = useRouter()
 
-  console.log(router.pathname)
-
   const routes = [
     {
       name: 'About',
