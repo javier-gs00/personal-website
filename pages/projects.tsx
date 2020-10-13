@@ -1,5 +1,6 @@
 import React from 'react'
+import { Layout } from '../components/layout/Layout'
 
 export default function Projects() {
-  return <div>Projects</div>
+  return <Layout pageTitle="Projects">Projects</Layout>
 }
