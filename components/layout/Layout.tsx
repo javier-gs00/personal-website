@@ -15,7 +15,7 @@ export const Layout: React.FC<Props> = ({ children, pageTitle }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {children}
+      <div className={styles.contentContainer}>{children}</div>
     </div>
   )
 }
