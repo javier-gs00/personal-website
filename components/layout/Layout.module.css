@@ -9,5 +9,5 @@
 }
 
 .contentContainer {
-  max-width: var(--content-width);
+  width: var(--content-width);
 }
