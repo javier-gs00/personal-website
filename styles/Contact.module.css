@@ -15,10 +15,6 @@
   padding: 2rem;
 }
 
-.container:nth-child(2) {
-  align-items: center;
-}
-
 .title {
   margin: 0;
   font-size: 4rem;
@@ -31,6 +27,18 @@
 .title,
 .description {
   text-align: left;
+}
+
+.linkList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.linkList li {
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 2rem;
 }
 
 .photo {
