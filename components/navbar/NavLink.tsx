@@ -16,8 +16,10 @@ export const NavLink: React.FC<Props> = ({ href, name, isActive }) => {
   })
 
   return (
-    <Link href={href} passHref>
-      <a className={linkClass}>{name}</a>
-    </Link>
+    <div className={styles.linkContainer}>
+      <Link href={href} passHref>
+        <a className={linkClass}>{name}</a>
+      </Link>
+    </div>
   )
 }
